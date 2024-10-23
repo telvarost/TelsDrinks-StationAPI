@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "telsdrinks:block/kettle_model"
+    }
+  }
+}

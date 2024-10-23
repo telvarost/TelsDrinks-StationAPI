@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "telsdrinks:block/empty_mug_model"
+    }
+  }
+}

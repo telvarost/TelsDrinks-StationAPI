@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "telsdrinks",
+  "version": "${version}",
+
+  "name": "TelsDrinks",
+  "description": "Adds some fun drinks into old Minecraft :D",
+  "authors": [
+    "Telvarost"
+  ],
+  "contact": {
+    "issues": "https://github.com/telvarost/TelsDrinks-StationAPI/issues",
+    "homepage": "https://github.com/telvarost/TelsDrinks-StationAPI/",
+    "sources": "https://github.com/telvarost/TelsDrinks-StationAPI/"
+  },
+
+  "license": "MIT",
+  "icon": "assets/telsdrinks/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "stationapi:event_bus": [
+    ],
+    "stationapi:event_bus_client": [
+      "com.github.telvarost.telsdrinks.events.init.BlockListener",
+      "com.github.telvarost.telsdrinks.events.init.KeyBindingListener",
+      "com.github.telvarost.telsdrinks.events.KeyPressedListener"
+    ],
+    "stationapi:event_bus_server": [
+    ],
+    "gcapi": [
+      "com.github.telvarost.telsdrinks.Config"
+    ]
+  },
+  "mixins": [
+    "telsdrinks.mixins.json"
+  ],
+
+  "depends": {
+    "minecraft": "1.0.0-beta.7.3"
+  }
+}
