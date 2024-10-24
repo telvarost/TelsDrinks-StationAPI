@@ -1,6 +1,5 @@
-package com.github.telvarost.telsdrinks.events.init;
+package com.github.telvarost.telsdrinks.events.client;
 
-import net.fabricmc.loader.api.FabricLoader;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.client.option.KeyBinding;
 import net.modificationstation.stationapi.api.client.event.option.KeyBindingRegisterEvent;

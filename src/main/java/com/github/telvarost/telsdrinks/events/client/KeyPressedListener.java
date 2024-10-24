@@ -1,7 +1,6 @@
-package com.github.telvarost.telsdrinks.events;
+package com.github.telvarost.telsdrinks.events.client;
 
 import com.github.telvarost.telsdrinks.ModHelper;
-import com.github.telvarost.telsdrinks.events.init.KeyBindingListener;
 import net.fabricmc.loader.api.FabricLoader;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.client.Minecraft;

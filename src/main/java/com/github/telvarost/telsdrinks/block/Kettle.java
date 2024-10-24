@@ -1,7 +1,9 @@
 package com.github.telvarost.telsdrinks.block;
 
+import com.github.telvarost.telsdrinks.blockentity.KettleBlockEntity;
 import com.github.telvarost.telsdrinks.item.KettleBlockItem;
 import net.minecraft.block.Block;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.BlockView;
 import net.modificationstation.stationapi.api.block.BlockState;
@@ -10,11 +12,12 @@ import net.modificationstation.stationapi.api.item.ItemPlacementContext;
 import net.modificationstation.stationapi.api.state.StateManager;
 import net.modificationstation.stationapi.api.state.property.Properties;
 import net.modificationstation.stationapi.api.template.block.TemplateBlock;
+import net.modificationstation.stationapi.api.template.block.TemplateBlockWithEntity;
 import net.modificationstation.stationapi.api.util.Identifier;
 import net.modificationstation.stationapi.api.util.math.Direction;
 
 @HasCustomBlockItemFactory(KettleBlockItem.class)
-public class Kettle extends TemplateBlock {
+public class Kettle extends TemplateBlockWithEntity {
 
     private final float MUG_WIDTH = 0.0625F * 3;
     private final float MUG_HEIGHT = 0.5F + 0.0625F;
@@ -50,5 +53,10 @@ public class Kettle extends TemplateBlock {
         Direction direction = context.getHorizontalPlayerFacing().rotateCounterclockwise(Direction.Axis.Y);
 
         return getDefaultState().with(Properties.HORIZONTAL_FACING, direction);
+    }
+
+    @Override
+    protected BlockEntity createBlockEntity() {
+        return new KettleBlockEntity();
     }
 }

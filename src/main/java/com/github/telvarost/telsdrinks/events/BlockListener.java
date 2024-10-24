@@ -1,4 +1,4 @@
-package com.github.telvarost.telsdrinks.events.init;
+package com.github.telvarost.telsdrinks.events;
 
 import com.github.telvarost.telsdrinks.block.Kettle;
 import com.github.telvarost.telsdrinks.block.Mug;
