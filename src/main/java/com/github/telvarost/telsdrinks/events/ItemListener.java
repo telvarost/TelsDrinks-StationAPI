@@ -17,7 +17,7 @@ public class ItemListener {
 
     @EventListener
     void registerItems(ItemRegistryEvent event) {
-        CLAY_MUG = new ClayMug(NAMESPACE.id("clay_mug")).setMaxCount(1).setTranslationKey(NAMESPACE, "clay_mug");
+        CLAY_MUG = new ClayMug(NAMESPACE.id("clay_mug")).setTranslationKey(NAMESPACE, "clay_mug");
 
         items = new Item[]{
                 CLAY_MUG

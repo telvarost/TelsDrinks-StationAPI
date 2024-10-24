@@ -1,6 +1,6 @@
 item.@.clay_mug.name=Clay Mug
 
 tile.@.kettle.name=Kettle
-tile.@.mug.name=Mug
+tile.@.mug.name=Empty Mug
 
 tab.@.clay_drink_set.name=SameOldSpells Spells

@@ -11,6 +11,6 @@ public class KettleBlockItem extends TemplateBlockItem implements CustomTooltipP
 
     @Override
     public String[] getTooltip(ItemStack itemInstance, String originalTooltip) {
-        return new String[]{originalTooltip + " Block Item"};
+        return new String[]{originalTooltip};
     }
 }
