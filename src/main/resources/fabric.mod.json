@@ -24,6 +24,9 @@
     "stationapi:event_bus_client": [
       "com.github.telvarost.telsdrinks.events.init.BlockListener",
       "com.github.telvarost.telsdrinks.events.init.KeyBindingListener",
+      "com.github.telvarost.telsdrinks.events.init.TextureListener",
+      "com.github.telvarost.telsdrinks.events.init.ItemListener",
+      "com.github.telvarost.telsdrinks.events.init.RecipeListener",
       "com.github.telvarost.telsdrinks.events.KeyPressedListener"
     ],
     "stationapi:event_bus_server": [
