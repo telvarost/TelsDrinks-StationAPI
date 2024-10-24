@@ -57,10 +57,10 @@ public class Mug extends TemplateBlock {
         return getDefaultState().with(EMPTY, isSneaking);
     }
 
-//    @Override
-//    public boolean canPlaceAt(World world, int x, int y, int z) {
-//        return world.shouldSuffocate(x, y - 1, z);
-//    }
+    @Override
+    public boolean canPlaceAt(World world, int x, int y, int z) {
+        return world.shouldSuffocate(x, y - 1, z);
+    }
 
     @Override
     public void neighborUpdate(World world, int x, int y, int z, int id) {
