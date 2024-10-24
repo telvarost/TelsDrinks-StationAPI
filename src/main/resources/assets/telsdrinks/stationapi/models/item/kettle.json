@@ -1,3 +1,6 @@
 {
-  "parent": "telsdrinks:block/kettle_model"
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "telsdrinks:item/kettle"
+  }
 }

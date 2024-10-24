@@ -50,7 +50,7 @@ public class Kettle extends TemplateBlockWithEntity {
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext context) {
-        Direction direction = context.getHorizontalPlayerFacing().rotateCounterclockwise(Direction.Axis.Y);
+        Direction direction = context.getHorizontalPlayerFacing().rotateClockwise(Direction.Axis.Y);
 
         return getDefaultState().with(Properties.HORIZONTAL_FACING, direction);
     }
