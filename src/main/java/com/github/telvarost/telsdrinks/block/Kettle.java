@@ -1,15 +1,19 @@
 package com.github.telvarost.telsdrinks.block;
 
-//import com.github.telvarost.sameoldspells.ClientUtil;
-//import com.github.telvarost.sameoldspells.Config;
-//import com.github.telvarost.sameoldspells.mixin.WorldAccessor;
+import com.github.telvarost.telsdrinks.item.KettleBlockItem;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.util.math.Box;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
+import net.modificationstation.stationapi.api.block.BlockState;
+import net.modificationstation.stationapi.api.block.HasCustomBlockItemFactory;
+import net.modificationstation.stationapi.api.item.ItemPlacementContext;
+import net.modificationstation.stationapi.api.state.StateManager;
+import net.modificationstation.stationapi.api.state.property.Properties;
 import net.modificationstation.stationapi.api.template.block.TemplateBlock;
 import net.modificationstation.stationapi.api.util.Identifier;
+import net.modificationstation.stationapi.api.util.math.Direction;
 
+@HasCustomBlockItemFactory(KettleBlockItem.class)
 public class Kettle extends TemplateBlock {
 
     private final float MUG_WIDTH = 0.0625F * 3;
@@ -17,7 +21,8 @@ public class Kettle extends TemplateBlock {
 
     public Kettle(Identifier identifier, Material material) {
         super(identifier, material);
-        this.setBoundingBox(MUG_WIDTH, 0.0F, MUG_WIDTH, 1.0F - MUG_WIDTH, MUG_HEIGHT, 1.0F - MUG_WIDTH);
+        setBoundingBox(MUG_WIDTH, 0.0F, MUG_WIDTH, 1.0F - MUG_WIDTH, MUG_HEIGHT, 1.0F - MUG_WIDTH);
+        setDefaultState(getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH));
     }
 
     @Override
@@ -35,58 +40,15 @@ public class Kettle extends TemplateBlock {
         return false;
     }
 
-//    @Environment(EnvType.CLIENT)
-//    @Override
-//    public boolean isSideVisible(BlockView blockView, int x, int y, int z, int side) {
-//        if (  !Config.config.RENDER_SPELLS_CONFIG.DISABLE_ALL_SPELL_RENDERING
-//           && Config.config.RENDER_SPELLS_CONFIG.ARROW_SPELL
-//        ) {
-//            return true;
-//        } else {
-//            return false;
-//        }
-//    }
+    @Override
+    public void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(Properties.HORIZONTAL_FACING);
+    }
 
-//    @Environment(EnvType.CLIENT)
-//    @Override
-//    public Box getBoundingBox(World world, int x, int y, int z) {
-//        if (  !Config.config.RENDER_SPELLS_CONFIG.DISABLE_ALL_SPELL_RENDERING
-//           && Config.config.RENDER_SPELLS_CONFIG.ARROW_SPELL
-//        ) {
-//            return Box.createCached((double)x + this.minX, (double)y + this.minY, (double)z + this.minZ, (double)x + this.maxX, (double)y + this.maxY, (double)z + this.maxZ);
-//        } else {
-//            return Box.createCached(0, 0, 0, 0, 0, 0);
-//        }
-//    }
+    @Override
+    public BlockState getPlacementState(ItemPlacementContext context) {
+        Direction direction = context.getHorizontalPlayerFacing().rotateCounterclockwise(Direction.Axis.Y);
 
-//    @Override
-//    public void onEntityCollision(World world, int x, int y, int z, Entity entity) {
-//        if (FabricLoader.getInstance().getEnvironmentType() == EnvType.CLIENT) {
-//            if (ClientUtil.IsParticle(entity)) {
-//                return;
-//            }
-//        }
-//
-//        if (null != entity) {
-//            WorldProperties worldProperties = ((WorldAccessor) world).getProperties();
-//            if (null != worldProperties) {
-//                world.setBlock(x, y, z, 0);
-//                world.setBlockMeta(x, y, z, 0);
-//
-//                /** - Summon arrows */
-//                ArrowEntity arrowEast = new ArrowEntity(world, (x + 0.5D) + 1, (y + 0.5D), (z + 0.5D));
-//                arrowEast.velocityX = 0.5;
-//                world.spawnEntity(arrowEast);
-//                ArrowEntity arrowWest = new ArrowEntity(world, (x + 0.5D) - 1, (y + 0.5D), (z + 0.5D));
-//                arrowWest.velocityX = -0.5;
-//                world.spawnEntity(arrowWest);
-//                ArrowEntity arrowNorth = new ArrowEntity(world, (x + 0.5D), (y + 0.5D), (z + 0.5D) + 1);
-//                arrowNorth.velocityZ = 0.5;
-//                world.spawnEntity(arrowNorth);
-//                ArrowEntity arrowSouth = new ArrowEntity(world, (x + 0.5D), (y + 0.5D), (z + 0.5D) - 1);
-//                arrowSouth.velocityZ = -0.5;
-//                world.spawnEntity(arrowSouth);
-//            }
-//        }
-//    }
+        return getDefaultState().with(Properties.HORIZONTAL_FACING, direction);
+    }
 }

@@ -1,7 +1,8 @@
 {
   "variants": {
-    "": {
-      "model": "telsdrinks:block/kettle_model"
-    }
+    "facing=north": { "model": "telsdrinks:block/kettle_model", "y": -90},
+    "facing=east": { "model": "telsdrinks:block/kettle_model", "y": 0 },
+    "facing=south": { "model": "telsdrinks:block/kettle_model", "y": 90 },
+    "facing=west": { "model": "telsdrinks:block/kettle_model", "y": 180 }
   }
 }

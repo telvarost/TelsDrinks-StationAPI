@@ -11,7 +11,7 @@ import net.modificationstation.stationapi.api.util.Identifier;
 import net.modificationstation.stationapi.api.util.Namespace;
 import net.modificationstation.stationapi.api.util.Null;
 
-import static net.minecraft.block.Block.WOOL_SOUND_GROUP;
+import static net.minecraft.block.Block.*;
 
 public class BlockListener {
 
@@ -25,8 +25,8 @@ public class BlockListener {
     @EventListener
     public void registerBlocks(BlockRegistryEvent event) {
 
-        KETTLE = new Kettle(Identifier.of(NAMESPACE, "kettle"), Material.AIR).setSoundGroup(WOOL_SOUND_GROUP).setTranslationKey(NAMESPACE, "kettle");
-        MUG = new Mug(Identifier.of(NAMESPACE, "mug"), Material.AIR).setSoundGroup(WOOL_SOUND_GROUP).setTranslationKey(NAMESPACE, "mug");
+        KETTLE = new Kettle(Identifier.of(NAMESPACE, "kettle"), Material.CLAY).setSoundGroup(METAL_SOUND_GROUP).setTranslationKey(NAMESPACE, "kettle");
+        MUG = new Mug(Identifier.of(NAMESPACE, "mug"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "mug");
 
         blocks = new Block[]
         {   KETTLE
