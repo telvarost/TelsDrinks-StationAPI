@@ -1,6 +1,10 @@
 item.@.clay_mug.name=Clay Mug
 
 tile.@.kettle.name=Kettle
+tile.@.apple_kettle.name=Apple Kettle
+tile.@.bitter_kettle.name=Bitter Kettle
+tile.@.milk_kettle.name=Milk Kettle
+tile.@.water_kettle.name=Water Kettle
 tile.@.mug.name=Empty Mug
 
 tab.@.clay_drink_set.name=SameOldSpells Spells
