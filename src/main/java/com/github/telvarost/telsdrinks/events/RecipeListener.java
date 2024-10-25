@@ -22,6 +22,7 @@ public class RecipeListener {
             CraftingRegistry.addShapedRecipe(new ItemStack(KETTLE.asItem(), 1), " X ", "X X", "XXX", 'X', Item.IRON_INGOT);
             CraftingRegistry.addShapedRecipe(new ItemStack(WATER_KETTLE.asItem(), 1), " X ", "XYX", "XXX", 'X', Item.IRON_INGOT, 'Y', Item.WATER_BUCKET);
             CraftingRegistry.addShapedRecipe(new ItemStack(MILK_KETTLE.asItem(), 1), " X ", "XYX", "XXX", 'X', Item.IRON_INGOT, 'Y', Item.MILK_BUCKET);
+            CraftingRegistry.addShapedRecipe(new ItemStack(APPLE_KETTLE.asItem(), 1), " X ", "XYX", "XXX", 'X', Item.IRON_INGOT, 'Y', Item.APPLE);
 
             /** - Mug crafting recipes */
             CraftingRegistry.addShapedRecipe(new ItemStack(CLAY_MUG.asItem(), 2), "   ", "XXX", " X ", 'X', Item.CLAY);
@@ -36,7 +37,9 @@ public class RecipeListener {
             /** - Fill kettle recipes */
             CraftingRegistry.addShapelessRecipe(new ItemStack(WATER_KETTLE.asItem(), 1), new ItemStack(KETTLE.asItem(), 1), Item.WATER_BUCKET);
             CraftingRegistry.addShapelessRecipe(new ItemStack(MILK_KETTLE.asItem(), 1), new ItemStack(KETTLE.asItem(), 1), Item.MILK_BUCKET);
+            CraftingRegistry.addShapelessRecipe(new ItemStack(APPLE_KETTLE.asItem(), 1), new ItemStack(KETTLE.asItem(), 1), Item.WATER_BUCKET, Item.APPLE);
             CraftingRegistry.addShapelessRecipe(new ItemStack(APPLE_KETTLE.asItem(), 1), new ItemStack(WATER_KETTLE.asItem(), 1), Item.APPLE);
+            CraftingRegistry.addShapelessRecipe(new ItemStack(BITTER_KETTLE.asItem(), 1), new ItemStack(KETTLE.asItem(), 1), Item.WATER_BUCKET, new ItemStack(Item.DYE, 1, 3));
             CraftingRegistry.addShapelessRecipe(new ItemStack(BITTER_KETTLE.asItem(), 1), new ItemStack(WATER_KETTLE.asItem(), 1), new ItemStack(Item.DYE, 1, 3));
 
             /** - Clean out kettle recipes */
