@@ -7,5 +7,6 @@ tile.@.milk_kettle.name=Milk Kettle
 tile.@.water_kettle.name=Water Kettle
 tile.@.empty_mug.name=Empty Mug
 tile.@.cup_of_water.name=Cup of Water
+tile.@.cup_of_milk.name=Cup of Milk
 
 tab.@.clay_drink_set.name=SameOldSpells Spells
