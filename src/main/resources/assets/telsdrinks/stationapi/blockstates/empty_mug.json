@@ -4,7 +4,7 @@
       "model": "telsdrinks:block/empty_mug_model"
     },
     "empty=false": {
-      "model": "telsdrinks:block/mug_model"
+      "model": "telsdrinks:block/cup_of_water_model"
     }
   }
 }
