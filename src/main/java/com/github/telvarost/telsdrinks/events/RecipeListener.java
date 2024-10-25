@@ -8,8 +8,8 @@ import net.modificationstation.stationapi.api.recipe.CraftingRegistry;
 import net.modificationstation.stationapi.api.recipe.SmeltingRegistry;
 import net.modificationstation.stationapi.api.util.Identifier;
 
+import static com.github.telvarost.telsdrinks.events.BlockListener.EMPTY_MUG;
 import static com.github.telvarost.telsdrinks.events.BlockListener.KETTLE;
-import static com.github.telvarost.telsdrinks.events.BlockListener.MUG;
 import static com.github.telvarost.telsdrinks.events.ItemListener.CLAY_MUG;
 
 public class RecipeListener {
@@ -24,7 +24,7 @@ public class RecipeListener {
         }
 
         if (type == RecipeRegisterEvent.Vanilla.SMELTING.type()) {
-            SmeltingRegistry.addSmeltingRecipe(new ItemStack(CLAY_MUG.asItem(), 1), new ItemStack(MUG.asItem(), 1));
+            SmeltingRegistry.addSmeltingRecipe(new ItemStack(CLAY_MUG.asItem(), 1), new ItemStack(EMPTY_MUG.asItem(), 1));
         }
 
         if (type == RecipeRegisterEvent.Vanilla.CRAFTING_SHAPELESS.type()) {
