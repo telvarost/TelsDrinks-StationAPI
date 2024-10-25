@@ -7,6 +7,7 @@ import net.modificationstation.stationapi.api.template.item.TemplateBlockItem;
 public class KettleBlockItem extends TemplateBlockItem implements CustomTooltipProvider {
     public KettleBlockItem(int i) {
         super(i);
+        setMaxCount(1);
     }
 
     @Override
