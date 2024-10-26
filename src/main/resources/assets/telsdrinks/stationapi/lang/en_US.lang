@@ -12,5 +12,8 @@ tile.@.cup_of_milk.name=Cup of Milk
 tile.@.poison.name=Poison
 tile.@.apple_cider.name=Apple Cider
 tile.@.bitter_water.name=Bitter Water
+tile.@.hot_chocolate.name=Hot Chocolate
+tile.@.latte.name=Latte
+tile.@.mocha.name=Mocha
 
 tab.@.clay_drink_set.name=SameOldSpells Spells

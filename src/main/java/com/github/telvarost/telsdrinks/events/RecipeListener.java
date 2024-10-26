@@ -36,6 +36,11 @@ public class RecipeListener {
         }
 
         if (type == RecipeRegisterEvent.Vanilla.CRAFTING_SHAPELESS.type()) {
+            /** - Drink recipes */
+            CraftingRegistry.addShapelessRecipe(new ItemStack(HOT_CHOCOLATE.asItem(), 1), new ItemStack(BITTER_WATER.asItem(), 1, 1), Item.SUGAR);
+            CraftingRegistry.addShapelessRecipe(new ItemStack(LATTE.asItem(), 1), new ItemStack(BITTER_WATER.asItem(), 1, 1), Item.MILK_BUCKET);
+            CraftingRegistry.addShapelessRecipe(new ItemStack(MOCHA.asItem(), 1), new ItemStack(BITTER_WATER.asItem(), 1, 1), Item.SUGAR, Item.MILK_BUCKET);
+
             /** - Fill kettle recipes */
             CraftingRegistry.addShapelessRecipe(new ItemStack(POISON_KETTLE.asItem(), 1), new ItemStack(KETTLE.asItem(), 1), Block.CACTUS);
             CraftingRegistry.addShapelessRecipe(new ItemStack(WATER_KETTLE.asItem(), 1), new ItemStack(KETTLE.asItem(), 1), Item.WATER_BUCKET);
