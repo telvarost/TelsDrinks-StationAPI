@@ -2,5 +2,13 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "telsdrinks:item/apple_cider"
-  }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "telsdrinks:hot": 1.0
+      },
+      "model": "telsdrinks:item/apple_cider_hot"
+    }
+  ]
 }

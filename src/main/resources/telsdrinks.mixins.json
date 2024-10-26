@@ -4,12 +4,11 @@
   "package": "com.github.telvarost.telsdrinks.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "OverworldDimensionMixin"
+    "RegistriesMixin"
   ],
   "server": [
   ],
   "client": [
-    "ClientPlayerEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
