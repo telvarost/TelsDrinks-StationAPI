@@ -47,8 +47,8 @@ public class EmptyMugBlockItem extends TemplateBlockItem {
     public boolean useOnBlock(ItemStack stack, PlayerEntity user, World world, int x, int y, int z, int side) {
         if (world.getBlockState(x, y, z).getBlock() instanceof Kettle) {
             boolean heat = world.getBlockId(x,y-1,z) == Block.LAVA.id || world.getBlockId(x,y-1,z) == Block.FLOWING_LAVA.id || world.getBlockId(x, y-1, z) == Block.FIRE.id || world.getBlockId(x, y-1, z) == Block.LIT_FURNACE.id;
-
             int id = world.getBlockId(x,y,z);
+
             if (fill(BlockListener.WATER_KETTLE.id, stack, user, world, id, heat, x, y, z, BlockListener.CUP_OF_WATER.asItem()))
                 return true;
             if (fill(BlockListener.MILK_KETTLE.id, stack, user, world, id, heat, x, y, z, BlockListener.CUP_OF_MILK.asItem()))
@@ -60,6 +60,7 @@ public class EmptyMugBlockItem extends TemplateBlockItem {
             if (fill(BlockListener.BITTER_KETTLE.id, stack, user, world, id, heat, x, y, z, BlockListener.BITTER_WATER.asItem()))
                 return true;
         }
+
         return super.useOnBlock(stack, user, world, x, y, z, side);
     }
 }

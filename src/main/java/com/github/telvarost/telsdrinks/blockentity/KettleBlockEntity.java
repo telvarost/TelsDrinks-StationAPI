@@ -48,6 +48,21 @@ public class KettleBlockEntity extends BlockEntity {
         }
     }
 
+    public boolean putLiquidIn() {
+        if (liquidLevel < 5)  {
+            if (liquidLevel > 1) {
+                liquidLevel += 1;
+            }
+            liquidLevel += 1;
+            if (liquidLevel > 5) {
+                liquidLevel = 5;
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     @Override
     public void tick() {
         if (!initialized) {
