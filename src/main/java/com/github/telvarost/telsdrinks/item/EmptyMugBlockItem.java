@@ -21,20 +21,22 @@ public class EmptyMugBlockItem extends TemplateBlockItem {
     public boolean fill(int KettleID, ItemStack stack, PlayerEntity user, World world, int id, boolean heat, int x, int y, int z, Item result) {
         if (id == KettleID) {
             if (((KettleBlockEntity) world.getBlockEntity(x,y,z)).takeLiquidOut()) {
-                if (heat)
+                if (heat) {
                     if (stack.count == 1) {
                         user.inventory.main[user.inventory.selectedSlot] = new ItemStack(result, 1, 1);
                     } else {
                         user.inventory.addStack(new ItemStack(result, 1, 1));
                         stack.count--;
                     }
-                else
-                if (stack.count == 1) {
-                    user.inventory.main[user.inventory.selectedSlot] = new ItemStack(result, 1, 0);
                 } else {
-                    user.inventory.addStack(new ItemStack(result, 1, 0));
-                    stack.count--;
+                    if (stack.count == 1) {
+                        user.inventory.main[user.inventory.selectedSlot] = new ItemStack(result, 1, 0);
+                    } else {
+                        user.inventory.addStack(new ItemStack(result, 1, 0));
+                        stack.count--;
+                    }
                 }
+                
                 return true;
             }
         }
