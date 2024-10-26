@@ -26,6 +26,9 @@ public class BlockListener {
     public static Block EMPTY_MUG;
     public static Block CUP_OF_WATER;
     public static Block CUP_OF_MILK;
+    public static Block POISON;
+    public static Block BITTER_WATER;
+    public static Block APPLE_CIDER;
 
     @Entrypoint.Namespace
     public static final Namespace NAMESPACE = Null.get();
@@ -42,6 +45,9 @@ public class BlockListener {
         EMPTY_MUG = new EmptyMug(Identifier.of(NAMESPACE, "empty_mug"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "empty_mug");
         CUP_OF_WATER = new Mug(Identifier.of(NAMESPACE, "cup_of_water"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "cup_of_water");
         CUP_OF_MILK = new Mug(Identifier.of(NAMESPACE, "cup_of_milk"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "cup_of_milk");
+        POISON = new Mug(Identifier.of(NAMESPACE, "poison"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "poison");
+        BITTER_WATER = new Mug(Identifier.of(NAMESPACE, "bitter_water"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "bitter_water");
+        APPLE_CIDER = new Mug(Identifier.of(NAMESPACE, "apple_cider"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "apple_cider");
 
         blocks = new Block[]
         {   KETTLE
@@ -52,6 +58,9 @@ public class BlockListener {
         ,   EMPTY_MUG
         ,   CUP_OF_WATER
         ,   CUP_OF_MILK
+        ,   POISON
+        ,   BITTER_WATER
+        ,   APPLE_CIDER
         };
     }
 }
