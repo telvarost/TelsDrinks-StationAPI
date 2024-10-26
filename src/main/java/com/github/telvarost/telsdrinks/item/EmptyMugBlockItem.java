@@ -36,7 +36,7 @@ public class EmptyMugBlockItem extends TemplateBlockItem {
                         stack.count--;
                     }
                 }
-                
+
                 return true;
             }
         }
