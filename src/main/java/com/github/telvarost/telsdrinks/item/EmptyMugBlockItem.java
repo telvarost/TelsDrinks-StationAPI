@@ -51,6 +51,12 @@ public class EmptyMugBlockItem extends TemplateBlockItem {
                 return true;
             if (fill(BlockListener.MILK_KETTLE.id, stack, user, world, id, heat, x, y, z, BlockListener.CUP_OF_MILK.asItem()))
                 return true;
+            if (fill(BlockListener.POISON_KETTLE.id, stack, user, world, id, heat, x, y, z, BlockListener.POISON.asItem()))
+                return true;
+            if (fill(BlockListener.APPLE_KETTLE.id, stack, user, world, id, heat, x, y, z, BlockListener.APPLE_CIDER.asItem()))
+                return true;
+            if (fill(BlockListener.BITTER_KETTLE.id, stack, user, world, id, heat, x, y, z, BlockListener.BITTER_WATER.asItem()))
+                return true;
         }
         return super.useOnBlock(stack, user, world, x, y, z, side);
     }

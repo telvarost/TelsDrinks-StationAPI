@@ -22,11 +22,34 @@ public class MugBlockItem extends TemplateBlockItem implements CustomTooltipProv
 
     @Override
     public ItemStack use(ItemStack stack, World world, PlayerEntity user) {
-        if (stack.getDamage() == 0) {
-            user.heal(2);
-        } else {
-            user.heal(3);
+        if (stack.itemId == BlockListener.CUP_OF_WATER.asItem().id) {
+            // no healing
         }
+        if (stack.itemId == BlockListener.CUP_OF_MILK.asItem().id) {
+            if (stack.getDamage() == 1) {
+                user.heal(0);
+            } else {
+                user.heal(1);
+            }
+        }
+        if (stack.itemId == BlockListener.POISON.asItem().id) {
+            user.heal(-1);
+        }
+        if (stack.itemId == BlockListener.APPLE_CIDER.asItem().id) {
+            if (stack.getDamage() == 1) {
+                user.heal(1);
+            } else {
+                user.heal(2);
+            }
+        }
+        if (stack.itemId == BlockListener.BITTER_WATER.asItem().id) {
+            if (stack.getDamage() == 1) {
+                user.heal(0);
+            } else {
+                user.heal(1);
+            }
+        }
+
         return new ItemStack(BlockListener.EMPTY_MUG.asItem(), 1, 1);
     }
 
@@ -46,6 +69,25 @@ public class MugBlockItem extends TemplateBlockItem implements CustomTooltipProv
             }
             if (stack.getDamage() == 1) {
                 return new String[]{ "Steamed Milk" };
+            }
+        }
+        if (stack.itemId == BlockListener.POISON.asItem().id) {
+            return new String[]{ "Poison" };
+        }
+        if (stack.itemId == BlockListener.APPLE_CIDER.asItem().id) {
+            if (stack.getDamage() == 0) {
+                return new String[]{ "Apple Cider" };
+            }
+            if (stack.getDamage() == 1) {
+                return new String[]{ "Hot Cider" };
+            }
+        }
+        if (stack.itemId == BlockListener.BITTER_WATER.asItem().id) {
+            if (stack.getDamage() == 0) {
+                return new String[]{ "Bitter Water" };
+            }
+            if (stack.getDamage() == 1) {
+                return new String[]{ "Hot Cocoa" };
             }
         }
         return new String[]{ originalTooltip };
