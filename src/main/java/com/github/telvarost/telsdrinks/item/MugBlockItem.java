@@ -24,30 +24,38 @@ public class MugBlockItem extends TemplateBlockItem implements CustomTooltipProv
     public ItemStack use(ItemStack stack, World world, PlayerEntity user) {
         if (stack.itemId == BlockListener.CUP_OF_WATER.asItem().id) {
             // no healing
-        }
-        if (stack.itemId == BlockListener.CUP_OF_MILK.asItem().id) {
+        } else if (stack.itemId == BlockListener.CUP_OF_MILK.asItem().id) {
             if (stack.getDamage() == 1) {
                 user.heal(0);
             } else {
                 user.heal(1);
             }
-        }
-        if (stack.itemId == BlockListener.POISON.asItem().id) {
+        } else if (stack.itemId == BlockListener.POISON.asItem().id) {
             user.heal(-1);
-        }
-        if (stack.itemId == BlockListener.APPLE_CIDER.asItem().id) {
+        } else if (stack.itemId == BlockListener.APPLE_CIDER.asItem().id) {
             if (stack.getDamage() == 1) {
                 user.heal(1);
             } else {
                 user.heal(2);
             }
-        }
-        if (stack.itemId == BlockListener.BITTER_WATER.asItem().id) {
+        } else if (stack.itemId == BlockListener.BITTER_WATER.asItem().id) {
             if (stack.getDamage() == 1) {
                 user.heal(0);
             } else {
                 user.heal(1);
             }
+        } else if (stack.itemId == BlockListener.HOT_CHOCOLATE.asItem().id) {
+            user.heal(2);
+        } else if (stack.itemId == BlockListener.LATTE.asItem().id) {
+            user.heal(3);
+        } else if (stack.itemId == BlockListener.MOCHA.asItem().id) {
+            user.heal(4);
+        } else if (stack.itemId == BlockListener.PUMPKIN_SPICE_LATTE.asItem().id) {
+            user.heal(6);
+        } else if (stack.itemId == BlockListener.DANDELION_TEA.asItem().id) {
+            user.heal(1);
+        } else if (stack.itemId == BlockListener.ROSE_TEA.asItem().id) {
+            user.heal(1);
         }
 
         return new ItemStack(BlockListener.EMPTY_MUG.asItem(), 1, 1);
@@ -56,40 +64,25 @@ public class MugBlockItem extends TemplateBlockItem implements CustomTooltipProv
     @Override
     public String[] getTooltip(ItemStack stack, String originalTooltip) {
         if (stack.itemId == BlockListener.CUP_OF_WATER.asItem().id) {
-            if (stack.getDamage() == 0) {
-                return new String[]{ "Cup of Water" };
-            }
             if (stack.getDamage() == 1) {
                 return new String[]{ "Hot Water" };
             }
-        }
-        if (stack.itemId == BlockListener.CUP_OF_MILK.asItem().id) {
-            if (stack.getDamage() == 0) {
-                return new String[]{ "Cup of Milk" };
-            }
+        } else if (stack.itemId == BlockListener.CUP_OF_MILK.asItem().id) {
             if (stack.getDamage() == 1) {
                 return new String[]{ "Steamed Milk" };
             }
-        }
-        if (stack.itemId == BlockListener.POISON.asItem().id) {
-            return new String[]{ "Poison" };
-        }
-        if (stack.itemId == BlockListener.APPLE_CIDER.asItem().id) {
-            if (stack.getDamage() == 0) {
-                return new String[]{ "Apple Cider" };
-            }
+        } else if (stack.itemId == BlockListener.POISON.asItem().id) {
+            return new String[]{originalTooltip};
+        } else if (stack.itemId == BlockListener.APPLE_CIDER.asItem().id) {
             if (stack.getDamage() == 1) {
                 return new String[]{ "Hot Cider" };
             }
-        }
-        if (stack.itemId == BlockListener.BITTER_WATER.asItem().id) {
-            if (stack.getDamage() == 0) {
-                return new String[]{ "Bitter Water" };
-            }
+        } else if (stack.itemId == BlockListener.BITTER_WATER.asItem().id) {
             if (stack.getDamage() == 1) {
                 return new String[]{ "Hot Cocoa" };
             }
         }
+
         return new String[]{ originalTooltip };
     }
 }
