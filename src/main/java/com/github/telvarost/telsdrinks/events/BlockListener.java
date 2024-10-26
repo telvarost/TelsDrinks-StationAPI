@@ -43,24 +43,25 @@ public class BlockListener {
         POISON_KETTLE = new Kettle(Identifier.of(NAMESPACE, "poison_kettle"), Material.CLAY).setSoundGroup(METAL_SOUND_GROUP).setTranslationKey(NAMESPACE, "poison_kettle");
         WATER_KETTLE = new Kettle(Identifier.of(NAMESPACE, "water_kettle"), Material.CLAY).setSoundGroup(METAL_SOUND_GROUP).setTranslationKey(NAMESPACE, "water_kettle");
         EMPTY_MUG = new EmptyMug(Identifier.of(NAMESPACE, "empty_mug"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "empty_mug");
-        CUP_OF_WATER = new Mug(Identifier.of(NAMESPACE, "cup_of_water"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "cup_of_water");
+        APPLE_CIDER = new Mug(Identifier.of(NAMESPACE, "apple_cider"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "apple_cider");
+        BITTER_WATER = new Mug(Identifier.of(NAMESPACE, "bitter_water"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "bitter_water");
         CUP_OF_MILK = new Mug(Identifier.of(NAMESPACE, "cup_of_milk"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "cup_of_milk");
         POISON = new Mug(Identifier.of(NAMESPACE, "poison"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "poison");
-        BITTER_WATER = new Mug(Identifier.of(NAMESPACE, "bitter_water"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "bitter_water");
-        APPLE_CIDER = new Mug(Identifier.of(NAMESPACE, "apple_cider"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "apple_cider");
+        CUP_OF_WATER = new Mug(Identifier.of(NAMESPACE, "cup_of_water"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "cup_of_water");
 
         blocks = new Block[]
         {   KETTLE
         ,   APPLE_KETTLE
         ,   BITTER_KETTLE
         ,   MILK_KETTLE
+        ,   POISON_KETTLE
         ,   WATER_KETTLE
         ,   EMPTY_MUG
-        ,   CUP_OF_WATER
+        ,   APPLE_CIDER
+        ,   BITTER_WATER
         ,   CUP_OF_MILK
         ,   POISON
-        ,   BITTER_WATER
-        ,   APPLE_CIDER
+        ,   CUP_OF_WATER
         };
     }
 }
