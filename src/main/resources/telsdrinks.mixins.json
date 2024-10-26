@@ -4,6 +4,7 @@
   "package": "com.github.telvarost.telsdrinks.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "CowEntityMixin",
     "RegistriesMixin"
   ],
   "server": [
