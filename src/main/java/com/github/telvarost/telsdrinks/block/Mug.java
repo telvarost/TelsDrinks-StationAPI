@@ -1,11 +1,15 @@
 package com.github.telvarost.telsdrinks.block;
 
+import com.github.telvarost.telsdrinks.item.KettleBlockItem;
+import com.github.telvarost.telsdrinks.item.MugBlockItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.modificationstation.stationapi.api.block.BlockState;
+import net.modificationstation.stationapi.api.block.HasCustomBlockItemFactory;
 import net.modificationstation.stationapi.api.item.ItemPlacementContext;
 import net.modificationstation.stationapi.api.state.StateManager;
 import net.modificationstation.stationapi.api.state.property.BooleanProperty;
@@ -13,6 +17,7 @@ import net.modificationstation.stationapi.api.state.property.Property;
 import net.modificationstation.stationapi.api.template.block.TemplateBlock;
 import net.modificationstation.stationapi.api.util.Identifier;
 
+@HasCustomBlockItemFactory(MugBlockItem.class)
 public class Mug extends TemplateBlock {
 
     public static final Property<Boolean> EMPTY = BooleanProperty.of("empty");

@@ -1,6 +1,8 @@
 package com.github.telvarost.telsdrinks.block;
 
 import com.github.telvarost.telsdrinks.blockentity.KettleBlockEntity;
+import com.github.telvarost.telsdrinks.events.BlockListener;
+import com.github.telvarost.telsdrinks.events.ItemListener;
 import com.github.telvarost.telsdrinks.item.KettleBlockItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.BlockEntity;
@@ -15,6 +17,8 @@ import net.modificationstation.stationapi.api.template.block.TemplateBlock;
 import net.modificationstation.stationapi.api.template.block.TemplateBlockWithEntity;
 import net.modificationstation.stationapi.api.util.Identifier;
 import net.modificationstation.stationapi.api.util.math.Direction;
+
+import java.util.Random;
 
 @HasCustomBlockItemFactory(KettleBlockItem.class)
 public class Kettle extends TemplateBlockWithEntity {
@@ -58,5 +62,10 @@ public class Kettle extends TemplateBlockWithEntity {
     @Override
     protected BlockEntity createBlockEntity() {
         return new KettleBlockEntity();
+    }
+
+    @Override
+    public int getDroppedItemId(int blockMeta, Random random) {
+        return BlockListener.KETTLE.id;
     }
 }

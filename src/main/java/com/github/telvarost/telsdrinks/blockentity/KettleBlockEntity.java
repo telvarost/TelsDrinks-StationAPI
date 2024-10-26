@@ -2,6 +2,7 @@ package com.github.telvarost.telsdrinks.blockentity;
 
 import com.github.telvarost.telsdrinks.events.BlockListener;
 import net.minecraft.block.entity.BlockEntity;
+import net.modificationstation.stationapi.api.block.BlockState;
 import net.modificationstation.stationapi.api.state.property.Properties;
 import net.modificationstation.stationapi.api.util.math.Direction;
 
@@ -12,20 +13,36 @@ public class KettleBlockEntity extends BlockEntity {
 
     public int liquidHorizontalOffset = 0;
 
-    public int tempTickCounter = 0;
-    public int liquidLevel = 0;
+    public int liquidLevel = 5;
 
     public KettleBlockEntity() {
 
+    }
+
+    public boolean takeLiquidOut() {
+        if (liquidLevel > 0)  {
+            liquidLevel -= 2;
+            if (liquidLevel < 0) {
+                liquidLevel = 0;
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
     public void tick() {
         if (!initialized) {
             if (world != null) {
-                Direction dir = world.getBlockState(x, y, z).get(Properties.HORIZONTAL_FACING);
+                BlockState state = world.getBlockState(x, y, z);
+                Direction dir = state.get(Properties.HORIZONTAL_FACING);
                 if (dir == Direction.EAST || dir == Direction.WEST) {
                     dirX = true;
+                }
+
+                if (state.getBlock().id == BlockListener.KETTLE.id) {
+                    liquidLevel = 0;
                 }
 
                 final int poison = BlockListener.KETTLE.id;
@@ -55,16 +72,6 @@ public class KettleBlockEntity extends BlockEntity {
                 initialized = true;
             }
         }
-
-        tempTickCounter++;
-        if (tempTickCounter > 40) {
-            liquidLevel++;
-            if (liquidLevel > 5) {
-                liquidLevel = 0;
-            }
-            tempTickCounter = 0;
-        }
-
 
         super.tick();
     }
