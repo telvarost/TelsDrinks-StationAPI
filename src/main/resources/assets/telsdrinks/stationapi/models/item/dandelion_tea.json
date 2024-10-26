@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "telsdrinks:item/dandelion_tea",
+    "layer1": "telsdrinks:item/steam"
+  }
+}

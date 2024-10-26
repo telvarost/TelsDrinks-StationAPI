@@ -32,6 +32,9 @@ public class BlockListener {
     public static Block HOT_CHOCOLATE;
     public static Block LATTE;
     public static Block MOCHA;
+    public static Block PUMPKIN_SPICE_LATTE;
+    public static Block ROSE_TEA;
+    public static Block DANDELION_TEA;
 
     @Entrypoint.Namespace
     public static final Namespace NAMESPACE = Null.get();
@@ -54,6 +57,9 @@ public class BlockListener {
         HOT_CHOCOLATE = new Mug(Identifier.of(NAMESPACE, "hot_chocolate"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "hot_chocolate");
         LATTE = new Mug(Identifier.of(NAMESPACE, "latte"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "latte");
         MOCHA = new Mug(Identifier.of(NAMESPACE, "mocha"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "mocha");
+        PUMPKIN_SPICE_LATTE = new Mug(Identifier.of(NAMESPACE, "pumpkin_spice_latte"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "pumpkin_spice_latte");
+        ROSE_TEA = new Mug(Identifier.of(NAMESPACE, "rose_tea"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "rose_tea");
+        DANDELION_TEA = new Mug(Identifier.of(NAMESPACE, "dandelion_tea"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "dandelion_tea");
 
         blocks = new Block[]
         {   KETTLE
@@ -71,6 +77,9 @@ public class BlockListener {
         ,   HOT_CHOCOLATE
         ,   LATTE
         ,   MOCHA
+        ,   PUMPKIN_SPICE_LATTE
+        ,   ROSE_TEA
+        ,   DANDELION_TEA
         };
     }
 }

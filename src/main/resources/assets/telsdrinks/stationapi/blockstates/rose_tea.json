@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "empty=true": {
+      "model": "telsdrinks:block/empty_mug_model"
+    },
+    "empty=false": {
+      "model": "telsdrinks:block/rose_tea_model"
+    }
+  }
+}

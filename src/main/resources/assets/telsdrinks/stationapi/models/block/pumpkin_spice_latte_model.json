@@ -1,6 +1,6 @@
 {
 	"parent": "telsdrinks:block/template_filled_cup_model",
 	"textures": {
-		"drink": "telsdrinks:block/mocha"
+		"drink": "telsdrinks:block/pumpkin_spice_latte"
 	}
 }
