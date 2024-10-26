@@ -58,8 +58,8 @@ public class BlockListener {
         LATTE = new Mug(Identifier.of(NAMESPACE, "latte"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "latte");
         MOCHA = new Mug(Identifier.of(NAMESPACE, "mocha"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "mocha");
         PUMPKIN_SPICE_LATTE = new Mug(Identifier.of(NAMESPACE, "pumpkin_spice_latte"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "pumpkin_spice_latte");
-        ROSE_TEA = new Mug(Identifier.of(NAMESPACE, "rose_tea"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "rose_tea");
         DANDELION_TEA = new Mug(Identifier.of(NAMESPACE, "dandelion_tea"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "dandelion_tea");
+        ROSE_TEA = new Mug(Identifier.of(NAMESPACE, "rose_tea"), Material.CLAY).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "rose_tea");
 
         blocks = new Block[]
         {   KETTLE
@@ -78,8 +78,8 @@ public class BlockListener {
         ,   LATTE
         ,   MOCHA
         ,   PUMPKIN_SPICE_LATTE
-        ,   ROSE_TEA
         ,   DANDELION_TEA
+        ,   ROSE_TEA
         };
     }
 }

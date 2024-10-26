@@ -1,6 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "telsdrinks:item/latte"
+    "layer0": "telsdrinks:item/latte",
+    "layer1": "telsdrinks:item/steam"
   }
 }
