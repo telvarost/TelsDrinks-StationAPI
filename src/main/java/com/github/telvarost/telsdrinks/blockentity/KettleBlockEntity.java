@@ -50,7 +50,7 @@ public class KettleBlockEntity extends BlockEntity {
 
     public boolean putLiquidIn() {
         if (liquidLevel < 5)  {
-            if (liquidLevel > 1) {
+            if (liquidLevel > 0) {
                 liquidLevel += 1;
             }
             liquidLevel += 1;
