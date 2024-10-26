@@ -6,5 +6,15 @@
     "empty=false": {
       "model": "telsdrinks:block/apple_cider_model"
     }
-  }
+  },
+  "multipart": [
+    {
+      "when": {
+        "hot": "true"
+      },
+      "apply": {
+        "model": "telsdrinks:block/steam_model"
+      }
+    }
+  ]
 }

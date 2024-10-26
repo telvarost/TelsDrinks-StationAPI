@@ -5,6 +5,7 @@ import com.github.telvarost.telsdrinks.item.MugBlockItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
@@ -20,6 +21,7 @@ import net.modificationstation.stationapi.api.util.Identifier;
 @HasCustomBlockItemFactory(MugBlockItem.class)
 public class Mug extends TemplateBlock {
 
+    public static final Property<Boolean> HOT = BooleanProperty.of("hot");
     public static final Property<Boolean> EMPTY = BooleanProperty.of("empty");
     private final float MUG_WIDTH = 0.0625F * 5;
     private final float MUG_HEIGHT = 0.5F - 0.0625F;
@@ -27,7 +29,7 @@ public class Mug extends TemplateBlock {
     public Mug(Identifier identifier, Material material) {
         super(identifier, material);
         setBoundingBox(MUG_WIDTH, 0.0F, MUG_WIDTH, 1.0F - MUG_WIDTH, MUG_HEIGHT, 1.0F - MUG_WIDTH);
-        setDefaultState(getDefaultState().with(EMPTY, true));
+        setDefaultState(getDefaultState().with(EMPTY, true).with(HOT, false));
     }
 
     @Override
@@ -53,13 +55,15 @@ public class Mug extends TemplateBlock {
     @Override
     public void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(EMPTY);
+        builder.add(HOT);
     }
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext context) {
         boolean isSneaking = context.getPlayer().isSneaking();
+        boolean hot = context.getStack().getDamage() == 1;
 
-        return getDefaultState().with(EMPTY, isSneaking);
+        return getDefaultState().with(EMPTY, isSneaking).with(HOT, hot);
     }
 
     @Override
@@ -78,5 +82,10 @@ public class Mug extends TemplateBlock {
             this.dropStacks(world, x, y, z, world.getBlockMeta(x, y, z));
             world.setBlock(x, y, z, 0);
         }
+    }
+
+    @Override
+    protected int getDroppedItemMeta(int blockMeta) {
+        return super.getDroppedItemMeta(blockMeta);
     }
 }
