@@ -21,6 +21,16 @@ public class MugBlockItem extends TemplateBlockItem implements CustomTooltipProv
     }
 
     @Override
+    public ItemStack use(ItemStack stack, World world, PlayerEntity user) {
+        if (stack.getDamage() == 0) {
+            user.heal(2);
+        } else {
+            user.heal(3);
+        }
+        return new ItemStack(BlockListener.EMPTY_MUG.asItem(), 1, 1);
+    }
+
+    @Override
     public String[] getTooltip(ItemStack stack, String originalTooltip) {
         if (stack.itemId == BlockListener.CUP_OF_WATER.asItem().id) {
             if (stack.getDamage() == 0) {
