@@ -1,6 +1,6 @@
 {
 	"parent": "telsdrinks:block/template_filled_cup_model",
 	"textures": {
-		"kettle": "telsdrinks:block/bitter_water"
+		"drink": "telsdrinks:block/bitter_water"
 	}
 }
