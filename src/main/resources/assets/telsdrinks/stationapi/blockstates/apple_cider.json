@@ -1,19 +1,27 @@
 {
-  "variants": {
-    "empty=true": {
-      "model": "telsdrinks:block/empty_mug_model"
-    },
-    "empty=false": {
-      "model": "telsdrinks:block/apple_cider_model"
-    }
-  },
   "multipart": [
     {
-      "when": {
-        "hot": "true"
+      "apply": {
+        "model": "telsdrinks:block/empty_mug_model"
       },
+      "when": {
+        "empty": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "telsdrinks:block/apple_cider_model"
+      },
+      "when": {
+        "empty": "false"
+      }
+    },
+    {
       "apply": {
         "model": "telsdrinks:block/steam_model"
+      },
+      "when": {
+        "hot": "true"
       }
     }
   ]

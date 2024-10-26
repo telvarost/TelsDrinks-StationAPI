@@ -3,11 +3,7 @@ package com.github.telvarost.telsdrinks.item;
 import com.github.telvarost.telsdrinks.block.Kettle;
 import com.github.telvarost.telsdrinks.blockentity.KettleBlockEntity;
 import com.github.telvarost.telsdrinks.events.BlockListener;
-import com.github.telvarost.telsdrinks.events.ItemListener;
-import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.modificationstation.stationapi.api.client.item.CustomTooltipProvider;
@@ -22,6 +18,8 @@ public class MugBlockItem extends TemplateBlockItem implements CustomTooltipProv
 
     @Override
     public ItemStack use(ItemStack stack, World world, PlayerEntity user) {
+        world.playSound(user.x, user.y, user.z, "telsdrinks:drink", 1.0F, 1.0F);
+
         if (stack.itemId == BlockListener.CUP_OF_WATER.asItem().id) {
             // no healing
         } else if (stack.itemId == BlockListener.CUP_OF_MILK.asItem().id) {
@@ -31,7 +29,7 @@ public class MugBlockItem extends TemplateBlockItem implements CustomTooltipProv
                 user.heal(1);
             }
         } else if (stack.itemId == BlockListener.POISON.asItem().id) {
-            user.heal(-1);
+            user.damage(null, 1);
         } else if (stack.itemId == BlockListener.APPLE_CIDER.asItem().id) {
             if (stack.getDamage() == 1) {
                 user.heal(1);
