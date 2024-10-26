@@ -2,6 +2,7 @@ package com.github.telvarost.telsdrinks.blockentity;
 
 import com.github.telvarost.telsdrinks.events.BlockListener;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.nbt.NbtCompound;
 import net.modificationstation.stationapi.api.block.BlockState;
 import net.modificationstation.stationapi.api.state.property.Properties;
 import net.modificationstation.stationapi.api.util.math.Direction;
@@ -17,6 +18,22 @@ public class KettleBlockEntity extends BlockEntity {
 
     public KettleBlockEntity() {
 
+    }
+
+    @Override
+    public void readNbt(NbtCompound nbt) {
+        super.readNbt(nbt);
+        if (nbt.contains("liquidLevel"))
+            this.liquidLevel = nbt.getInt("liquidLevel");
+        else
+            this.liquidLevel = 0;
+    }
+
+    @Override
+    public void writeNbt(NbtCompound nbt) {
+        super.writeNbt(nbt);
+        if (liquidLevel > 0)
+            nbt.putInt("liquidLevel", liquidLevel);
     }
 
     public boolean takeLiquidOut() {
