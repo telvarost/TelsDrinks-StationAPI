@@ -28,7 +28,7 @@ public class Kettle extends TemplateBlockWithEntity {
 
     public Kettle(Identifier identifier, Material material) {
         super(identifier, material);
-        setBoundingBox(MUG_WIDTH, 0.0F, MUG_WIDTH, 1.0F - MUG_WIDTH, MUG_HEIGHT, 1.0F - MUG_WIDTH);
+        setBoundingBox(MUG_WIDTH, 0.0F + 0.0625F, MUG_WIDTH, 1.0F - MUG_WIDTH, MUG_HEIGHT, 1.0F - MUG_WIDTH);
         setDefaultState(getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH));
         setHardness(0.5F);
     }
