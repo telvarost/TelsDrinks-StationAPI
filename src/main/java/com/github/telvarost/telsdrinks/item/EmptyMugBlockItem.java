@@ -14,10 +14,7 @@ import net.minecraft.util.hit.HitResultType;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.modificationstation.stationapi.api.client.item.CustomTooltipProvider;
 import net.modificationstation.stationapi.api.template.item.TemplateBlockItem;
-import net.modificationstation.stationapi.api.template.item.TemplateItem;
-import net.modificationstation.stationapi.api.util.Identifier;
 
 public class EmptyMugBlockItem extends TemplateBlockItem {
     public EmptyMugBlockItem(int i) {

@@ -1,5 +1,6 @@
 package com.github.telvarost.telsdrinks.block;
 
+import com.github.telvarost.telsdrinks.events.BlockListener;
 import com.github.telvarost.telsdrinks.item.KettleBlockItem;
 import com.github.telvarost.telsdrinks.item.MugBlockItem;
 import net.minecraft.block.Block;
@@ -103,4 +104,69 @@ public class Mug extends TemplateBlock {
         return hot;
     }
     // end workaround
+
+    @Override
+    public boolean onUse(World world, int x, int y, int z, PlayerEntity player) {
+        int blockId = world.getBlockId(x, y, z);
+        int heatValue = world.getBlockState(x,y,z).get(HOT) ? 1 : 0;
+
+        if (blockId == BlockListener.CUP_OF_WATER.id) {
+            drink(world, x, y, z, player, 0);
+            return true;
+        } else if (blockId == BlockListener.CUP_OF_MILK.id) {
+            if (heatValue == 1) {
+                drink(world, x, y, z, player, 1);
+            } else {
+                drink(world, x, y, z, player, 0);
+            }
+            return true;
+        } else if (blockId == BlockListener.POISON.id) {
+            drink(world, x, y, z, player, -1);
+            return true;
+        } else if (blockId == BlockListener.APPLE_CIDER.id) {
+            if (heatValue == 1) {
+                drink(world, x, y, z, player, 2);
+            } else {
+                drink(world, x, y, z, player, 1);
+            }
+            return true;
+        } else if (blockId == BlockListener.BITTER_WATER.id) {
+            if (heatValue == 1) {
+                drink(world, x, y, z, player, 1);
+            } else {
+                drink(world, x, y, z, player, 0);
+            }
+            return true;
+        } else if (blockId == BlockListener.HOT_CHOCOLATE.id) {
+            drink(world, x, y, z, player, 2);
+            return true;
+        } else if (blockId == BlockListener.LATTE.id) {
+            drink(world, x, y, z, player, 3);
+            return true;
+        } else if (blockId == BlockListener.MOCHA.id) {
+            drink(world, x, y, z, player, 4);
+            return true;
+        } else if (blockId == BlockListener.PUMPKIN_SPICE_LATTE.id) {
+            drink(world, x, y, z, player, 6);
+            return true;
+        } else if (blockId == BlockListener.DANDELION_TEA.id) {
+            drink(world, x, y, z, player, 1);
+            return true;
+        } else if (blockId == BlockListener.ROSE_TEA.id) {
+            drink(world, x, y, z, player, 1);
+            return true;
+        }
+
+        return false;
+    }
+
+    private void drink(World world, int x, int y, int z, PlayerEntity player, int healAmount) {
+        if (0 > healAmount) {
+            player.damage(null, (healAmount * -1));
+        } else {
+            player.heal(healAmount);
+        }
+        world.playSound(player.x, player.y, player.z, "telsdrinks:drink", 1.0F, 1.0F);
+        world.setBlock(x, y, z, BlockListener.EMPTY_MUG.id, 0);
+    }
 }

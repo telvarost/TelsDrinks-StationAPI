@@ -24,23 +24,23 @@ public class MugBlockItem extends TemplateBlockItem implements CustomTooltipProv
             // no healing
         } else if (stack.itemId == BlockListener.CUP_OF_MILK.asItem().id) {
             if (stack.getDamage() == 1) {
-                user.heal(0);
-            } else {
                 user.heal(1);
+            } else {
+                user.heal(0);
             }
         } else if (stack.itemId == BlockListener.POISON.asItem().id) {
             user.damage(null, 1);
         } else if (stack.itemId == BlockListener.APPLE_CIDER.asItem().id) {
             if (stack.getDamage() == 1) {
-                user.heal(1);
-            } else {
                 user.heal(2);
+            } else {
+                user.heal(1);
             }
         } else if (stack.itemId == BlockListener.BITTER_WATER.asItem().id) {
             if (stack.getDamage() == 1) {
-                user.heal(0);
-            } else {
                 user.heal(1);
+            } else {
+                user.heal(0);
             }
         } else if (stack.itemId == BlockListener.HOT_CHOCOLATE.asItem().id) {
             user.heal(2);
