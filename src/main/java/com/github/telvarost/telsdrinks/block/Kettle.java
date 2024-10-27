@@ -80,10 +80,26 @@ public class Kettle extends TemplateBlockWithEntity {
 
         if (null != heldItem) {
             if (  (  blockId == BlockListener.KETTLE.id
-                  || (blockId == BlockListener.WATER_KETTLE.id && kettleBlockEntity.liquidLevel < 5)
+                  || (blockId == BlockListener.POISON_KETTLE.id && kettleBlockEntity.liquidLevel < 5)
                   || kettleBlockEntity.liquidLevel == 0
                   )
-               && heldItem.itemId == Item.WATER_BUCKET.id
+               && heldItem.itemId == Block.CACTUS.asItem().id
+            ) {
+                if (heldItem.count == 1) {
+                    player.inventory.setStack(player.inventory.selectedSlot, null);
+                } else {
+                    heldItem.count--;
+                }
+                Direction direction =  world.getBlockState(x,y,z).get(Properties.HORIZONTAL_FACING);
+                world.setBlock(x, y, z, BlockListener.POISON_KETTLE.id);
+                BlockState blockState = world.getBlockState(x, y, z);
+                world.setBlockState(x, y, z, blockState.with(Properties.HORIZONTAL_FACING, direction));
+                return true;
+            } else if (  (  blockId == BlockListener.KETTLE.id
+                         || (blockId == BlockListener.WATER_KETTLE.id && kettleBlockEntity.liquidLevel < 5)
+                         || kettleBlockEntity.liquidLevel == 0
+                         )
+                      && heldItem.itemId == Item.WATER_BUCKET.id
             ) {
                 player.inventory.setStack(player.inventory.selectedSlot, new ItemStack(Item.BUCKET));
                 Direction direction = world.getBlockState(x, y, z).get(Properties.HORIZONTAL_FACING);
@@ -122,17 +138,6 @@ public class Kettle extends TemplateBlockWithEntity {
                 }
                 Direction direction =  world.getBlockState(x,y,z).get(Properties.HORIZONTAL_FACING);
                 world.setBlock(x, y, z, BlockListener.BITTER_KETTLE.id);
-                BlockState blockState = world.getBlockState(x, y, z);
-                world.setBlockState(x, y, z, blockState.with(Properties.HORIZONTAL_FACING, direction));
-                return true;
-            } else if (blockId == BlockListener.KETTLE.id && heldItem.itemId == Block.CACTUS.asItem().id) {
-                if (heldItem.count == 1) {
-                    player.inventory.setStack(player.inventory.selectedSlot, null);
-                } else {
-                    heldItem.count--;
-                }
-                Direction direction =  world.getBlockState(x,y,z).get(Properties.HORIZONTAL_FACING);
-                world.setBlock(x, y, z, BlockListener.POISON_KETTLE.id);
                 BlockState blockState = world.getBlockState(x, y, z);
                 world.setBlockState(x, y, z, blockState.with(Properties.HORIZONTAL_FACING, direction));
                 return true;
