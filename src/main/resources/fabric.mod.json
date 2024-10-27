@@ -28,14 +28,9 @@
     "stationapi:event_bus_client": [
       "com.github.telvarost.telsdrinks.events.client.BlockEntityRendererListener",
       "com.github.telvarost.telsdrinks.events.client.ItemPredicateListener",
-      "com.github.telvarost.telsdrinks.events.client.KeyBindingListener",
-      "com.github.telvarost.telsdrinks.events.client.KeyPressedListener",
       "com.github.telvarost.telsdrinks.events.client.TextureListener"
     ],
     "stationapi:event_bus_server": [
-    ],
-    "gcapi": [
-      "com.github.telvarost.telsdrinks.Config"
     ]
   },
   "mixins": [
