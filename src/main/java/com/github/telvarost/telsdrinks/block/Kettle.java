@@ -125,6 +125,17 @@ public class Kettle extends TemplateBlockWithEntity {
                 BlockState blockState = world.getBlockState(x, y, z);
                 world.setBlockState(x, y, z, blockState.with(Properties.HORIZONTAL_FACING, direction));
                 return true;
+            } else if (blockId == BlockListener.KETTLE.id && heldItem.itemId == Block.CACTUS.asItem().id) {
+                if (heldItem.count == 1) {
+                    player.inventory.setStack(player.inventory.selectedSlot, null);
+                } else {
+                    heldItem.count--;
+                }
+                Direction direction =  world.getBlockState(x,y,z).get(Properties.HORIZONTAL_FACING);
+                world.setBlock(x, y, z, BlockListener.POISON_KETTLE.id);
+                BlockState blockState = world.getBlockState(x, y, z);
+                world.setBlockState(x, y, z, blockState.with(Properties.HORIZONTAL_FACING, direction));
+                return true;
             } else if (  heldItem.itemId == Item.BUCKET.id
                       && kettleBlockEntity.liquidLevel == 5
             ) {
