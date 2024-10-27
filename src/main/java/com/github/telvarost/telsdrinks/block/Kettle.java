@@ -119,27 +119,38 @@ public class Kettle extends TemplateBlockWithEntity {
                 BlockState blockState = world.getBlockState(x, y, z);
                 world.setBlockState(x, y, z, blockState.with(Properties.HORIZONTAL_FACING, direction));
                 return true;
-            } else if (blockId == BlockListener.WATER_KETTLE.id && heldItem.itemId == Item.APPLE.id) {
+            } else if (  blockId == BlockListener.WATER_KETTLE.id
+                      && heldItem.itemId == Item.APPLE.id
+                      && kettleBlockEntity.liquidLevel > 0
+            ) {
                 if (heldItem.count == 1) {
                     player.inventory.setStack(player.inventory.selectedSlot, null);
                 } else {
                     heldItem.count--;
                 }
+                int liquidLevel = kettleBlockEntity.liquidLevel;
                 Direction direction =  world.getBlockState(x,y,z).get(Properties.HORIZONTAL_FACING);
                 world.setBlock(x, y, z, BlockListener.APPLE_KETTLE.id);
                 BlockState blockState = world.getBlockState(x, y, z);
                 world.setBlockState(x, y, z, blockState.with(Properties.HORIZONTAL_FACING, direction));
+                ((KettleBlockEntity)world.getBlockEntity(x, y, z)).liquidLevel = liquidLevel;
                 return true;
-            } else if (blockId == BlockListener.WATER_KETTLE.id && heldItem.itemId == Item.DYE.id && heldItem.getDamage() == 3) {
+            } else if (  blockId == BlockListener.WATER_KETTLE.id
+                      && heldItem.itemId == Item.DYE.id
+                      && heldItem.getDamage() == 3
+                      && kettleBlockEntity.liquidLevel > 0
+            ) {
                 if (heldItem.count == 1) {
                     player.inventory.setStack(player.inventory.selectedSlot, null);
                 } else {
                     heldItem.count--;
                 }
+                int liquidLevel = kettleBlockEntity.liquidLevel;
                 Direction direction =  world.getBlockState(x,y,z).get(Properties.HORIZONTAL_FACING);
                 world.setBlock(x, y, z, BlockListener.BITTER_KETTLE.id);
                 BlockState blockState = world.getBlockState(x, y, z);
                 world.setBlockState(x, y, z, blockState.with(Properties.HORIZONTAL_FACING, direction));
+                ((KettleBlockEntity)world.getBlockEntity(x, y, z)).liquidLevel = liquidLevel;
                 return true;
             } else if (  heldItem.itemId == Item.BUCKET.id
                       && kettleBlockEntity.liquidLevel == 5
