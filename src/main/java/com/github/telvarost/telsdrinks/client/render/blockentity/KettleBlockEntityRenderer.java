@@ -1,10 +1,9 @@
 package com.github.telvarost.telsdrinks.client.render.blockentity;
+
 import com.github.telvarost.telsdrinks.blockentity.KettleBlockEntity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.render.Tessellator;
 import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import org.lwjgl.opengl.GL11;
@@ -103,7 +102,6 @@ public class KettleBlockEntityRenderer extends BlockEntityRenderer {
 
             tessellator.draw();
         }
-
 
         // Restore OpenGL state
         GL11.glEnable(GL11.GL_LIGHTING);
