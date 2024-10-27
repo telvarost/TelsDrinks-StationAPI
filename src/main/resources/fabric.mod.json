@@ -31,6 +31,9 @@
       "com.github.telvarost.telsdrinks.events.client.TextureListener"
     ],
     "stationapi:event_bus_server": [
+    ],
+    "bhcreative:event_bus": [
+      "com.github.telvarost.telsdrinks.events.CreativeListener"
     ]
   },
   "mixins": [
