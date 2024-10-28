@@ -6,7 +6,8 @@
   "name": "TelsDrinks",
   "description": "Adds some fun drinks into old Minecraft :D",
   "authors": [
-    "Telvarost"
+    "Telvarost",
+    "Slainlight"
   ],
   "contact": {
     "issues": "https://github.com/telvarost/TelsDrinks-StationAPI/issues",
