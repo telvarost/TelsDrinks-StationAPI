@@ -12,6 +12,8 @@ This mod also adds cocoa as a rare drop from rainforest oak leaves.
 * Look for ferns on top really green grass!
 * Cocoa is used in the brewing of many of the mods signature drinks <3
 
+Sticks were added as a rare oak leaf drop in other biomes to help signify that the mod is working.
+
 How the mod works:
 * Kettles are heated by placing lava, fire, or a lit furnace below them.
 * When kettles are heated the hot variant of a drink is given.
