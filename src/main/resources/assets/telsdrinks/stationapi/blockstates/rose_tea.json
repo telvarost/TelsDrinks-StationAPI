@@ -2,7 +2,7 @@
   "multipart": [
     {
       "apply": {
-        "model": "telsdrinks:block/rose_tea_model"
+        "model": "telsdrinks:block/empty_mug_model"
       },
       "when": {
         "empty": "true"
