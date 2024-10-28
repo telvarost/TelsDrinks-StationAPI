@@ -19,6 +19,7 @@ How the mod works:
 * Kettles are heated by placing lava, fire, or a lit furnace below them.
 * When kettles are heated the hot variant of a drink is given.
 * Right click with a mug to take a drink out of a kettle.
+* Each kettle has a liquid level meter on the side to show how much is left.
 * Drinks can be used to restore hearts, poison your friends, or just be aesthetically pleasing :)
 
 For crafting recipes see images found here:
