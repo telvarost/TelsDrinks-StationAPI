@@ -3,6 +3,7 @@ package com.github.telvarost.telsdrinks.item;
 import com.github.telvarost.telsdrinks.block.Kettle;
 import com.github.telvarost.telsdrinks.blockentity.KettleBlockEntity;
 import com.github.telvarost.telsdrinks.events.BlockListener;
+import net.minecraft.client.resource.language.TranslationStorage;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -99,21 +100,21 @@ public class MugBlockItem extends TemplateBlockItem implements CustomTooltipProv
     public String[] getTooltip(ItemStack stack, String originalTooltip) {
         if (stack.itemId == BlockListener.CUP_OF_WATER.asItem().id) {
             if (stack.getDamage() == 1) {
-                return new String[]{ "Hot Water" };
+                return new String[]{ TranslationStorage.getInstance().get("tile.telsdrinks.hot_water.name") };
             }
         } else if (stack.itemId == BlockListener.CUP_OF_MILK.asItem().id) {
             if (stack.getDamage() == 1) {
-                return new String[]{ "Steamed Milk" };
+                return new String[]{ TranslationStorage.getInstance().get("tile.telsdrinks.steamed_milk.name") };
             }
         } else if (stack.itemId == BlockListener.POISON.asItem().id) {
             return new String[]{originalTooltip};
         } else if (stack.itemId == BlockListener.APPLE_CIDER.asItem().id) {
             if (stack.getDamage() == 1) {
-                return new String[]{ "Hot Cider" };
+                return new String[]{ TranslationStorage.getInstance().get("tile.telsdrinks.hot_cider.name") };
             }
         } else if (stack.itemId == BlockListener.BITTER_WATER.asItem().id) {
             if (stack.getDamage() == 1) {
-                return new String[]{ "Hot Cocoa" };
+                return new String[]{ TranslationStorage.getInstance().get("tile.telsdrinks.hot_cocoa.name") };
             }
         }
 
