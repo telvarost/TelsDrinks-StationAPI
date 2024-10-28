@@ -1,8 +1,10 @@
 package com.github.telvarost.telsdrinks.blockentity;
 
 import com.github.telvarost.telsdrinks.events.BlockListener;
+import com.github.telvarost.telsdrinks.network.packet.UpdateKettlePacket;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.network.packet.Packet;
 import net.modificationstation.stationapi.api.block.BlockState;
 import net.modificationstation.stationapi.api.state.property.Properties;
 import net.modificationstation.stationapi.api.util.math.Direction;
@@ -106,5 +108,10 @@ public class KettleBlockEntity extends BlockEntity {
         }
 
         super.tick();
+    }
+
+    @Override
+    public Packet createUpdatePacket() {
+        return new UpdateKettlePacket(x,y,z,liquidLevel);
     }
 }
