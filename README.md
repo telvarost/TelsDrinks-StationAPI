@@ -4,6 +4,14 @@ Adds some fun drinks into old Minecraft :D
 
 ## Tels Drinks
 
+This mod adds apples as a rare drop from season forest oak leaves and as a super rare drop from normal forest oak leaves.
+* Look for the green grass!
+* Apples are used to make apple cider and hot cider.
+
+This mod also adds cocoa as a rare drop from rainforest oak leaves.
+* Look for ferns on top really green grass!
+* Cocoa is used in the brewing of many of the mods signature drinks <3
+
 How the mod works:
 * Kettles are heated by placing lava, fire, or a lit furnace below them.
 * When kettles are heated the hot variant of a drink is given.
