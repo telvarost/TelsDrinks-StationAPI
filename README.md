@@ -13,6 +13,7 @@ This mod also adds cocoa as a rare drop from rainforest oak leaves.
 * Cocoa is used in the brewing of many of the mods signature drinks <3
 
 Sticks were added as a rare oak leaf drop in other biomes to help signify that the mod is working.
+* If the biome is dropping sticks it won't drop apples or cocoa!
 
 How the mod works:
 * Kettles are heated by placing lava, fire, or a lit furnace below them.
