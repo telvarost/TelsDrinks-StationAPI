@@ -2,6 +2,14 @@
 
 Adds some fun drinks into old Minecraft :D
 
+## Tels Drinks
+
+How the mod works:
+* Kettles are heated by placing lava, fire, or a lit furnace below them.
+* When kettles are heated the hot variant of a drink is given.
+* Right click with a mug to take a drink out of a kettle.
+* Drinks can be used to restore hearts, poison your friends, or just be aesthetically pleasing :)
+
 ## Installation using Prism Launcher
 
 1. Download an instance of Babric for Prism Launcher: https://github.com/babric/prism-instance
