@@ -21,6 +21,9 @@ How the mod works:
 * Right click with a mug to take a drink out of a kettle.
 * Drinks can be used to restore hearts, poison your friends, or just be aesthetically pleasing :)
 
+For crafting recipes see images found here:
+https://github.com/telvarost/TelsDrinks-StationAPI/tree/main/images
+
 ## Installation using Prism Launcher
 
 1. Download an instance of Babric for Prism Launcher: https://github.com/babric/prism-instance
