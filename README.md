@@ -1,15 +1,15 @@
-# TelsDrinks StationAPI Edition for Minecraft Beta 1.7.3
+# TelsDrinks StationAPI for Minecraft Beta 1.7.3
 
 Adds some fun drinks into old Minecraft :D
 
-## Tels Drinks
+## Description
 
-This mod adds apples as a rare drop from season forest oak leaves and as a super rare drop from normal forest oak leaves.
+This mod adds apples as a rare drop from seasonal forest oak leaves and as a super rare drop from normal forest oak leaves.
 * Look for the green grass!
 * Apples are used to make apple cider and hot cider.
 
 This mod also adds cocoa as a rare drop from rainforest oak leaves.
-* Look for ferns on top really green grass!
+* Look for ferns on top of really green grass!
 * Cocoa is used in the brewing of many of the mods signature drinks <3
 
 Sticks were added as a rare oak leaf drop in other biomes to help signify that the mod is working.
@@ -40,6 +40,6 @@ Got any suggestions on what should be added next? Feel free to share it by [crea
 
 ## Contributing
 
-Thanks for considering contributing! To get started fork this repository, make your changes, and create a PR. 
+Thanks for considering contributing! To get started fork this repository, make your changes, and create a PR.
 
 If you are new to StationAPI consider watching the following videos on Babric/StationAPI Minecraft modding: https://www.youtube.com/watch?v=9-sVGjnGJ5s&list=PLa2JWzyvH63wGcj5-i0P12VkJG7PDyo9T
