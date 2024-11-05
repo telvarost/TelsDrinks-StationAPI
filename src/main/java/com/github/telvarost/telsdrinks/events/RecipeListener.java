@@ -46,18 +46,18 @@ public class RecipeListener {
             //CraftingRegistry.addShapelessRecipe(new ItemStack(PUMPKIN_SPICE_LATTE.asItem(), 1), new ItemStack(BITTER_WATER.asItem(), 1, 1), Item.SUGAR, Item.MILK_BUCKET, Block.PUMPKIN);
 
             /** - Fill kettle recipes */
-            CraftingRegistry.addShapelessRecipe(new ItemStack(POISON_KETTLE.asItem(), 1), new ItemStack(KETTLE.asItem(), 1, 5), Block.CACTUS);
-            CraftingRegistry.addShapelessRecipe(new ItemStack(WATER_KETTLE.asItem(), 1), new ItemStack(KETTLE.asItem(), 1, 5), Item.WATER_BUCKET);
-            CraftingRegistry.addShapelessRecipe(new ItemStack(MILK_KETTLE.asItem(), 1), new ItemStack(KETTLE.asItem(), 1, 5), Item.MILK_BUCKET);
+            CraftingRegistry.addShapelessRecipe(new ItemStack(POISON_KETTLE.asItem(), 1), new ItemStack(KETTLE.asItem(), 1, -1), Block.CACTUS);
+            CraftingRegistry.addShapelessRecipe(new ItemStack(WATER_KETTLE.asItem(), 1), new ItemStack(KETTLE.asItem(), 1, -1), Item.WATER_BUCKET);
+            CraftingRegistry.addShapelessRecipe(new ItemStack(MILK_KETTLE.asItem(), 1), new ItemStack(KETTLE.asItem(), 1, -1), Item.MILK_BUCKET);
 
-            CraftingRegistry.addShapelessRecipe(new ItemStack(APPLE_KETTLE.asItem(), 1), new ItemStack(KETTLE.asItem(), 1, 5), Item.WATER_BUCKET, Item.APPLE);
+            CraftingRegistry.addShapelessRecipe(new ItemStack(APPLE_KETTLE.asItem(), 1), new ItemStack(KETTLE.asItem(), 1, -1), Item.WATER_BUCKET, Item.APPLE);
             CraftingRegistry.addShapelessRecipe(new ItemStack(APPLE_KETTLE.asItem(), 1, 0), new ItemStack(WATER_KETTLE.asItem(), 1, 0), Item.APPLE);
             CraftingRegistry.addShapelessRecipe(new ItemStack(APPLE_KETTLE.asItem(), 1, 1), new ItemStack(WATER_KETTLE.asItem(), 1, 1), Item.APPLE);
             CraftingRegistry.addShapelessRecipe(new ItemStack(APPLE_KETTLE.asItem(), 1, 2), new ItemStack(WATER_KETTLE.asItem(), 1, 2), Item.APPLE);
             CraftingRegistry.addShapelessRecipe(new ItemStack(APPLE_KETTLE.asItem(), 1, 3), new ItemStack(WATER_KETTLE.asItem(), 1, 3), Item.APPLE);
             CraftingRegistry.addShapelessRecipe(new ItemStack(APPLE_KETTLE.asItem(), 1, 4), new ItemStack(WATER_KETTLE.asItem(), 1, 4), Item.APPLE);
 
-            CraftingRegistry.addShapelessRecipe(new ItemStack(BITTER_KETTLE.asItem(), 1), new ItemStack(KETTLE.asItem(), 1, 5), Item.WATER_BUCKET, new ItemStack(Item.DYE, 1, 3));
+            CraftingRegistry.addShapelessRecipe(new ItemStack(BITTER_KETTLE.asItem(), 1), new ItemStack(KETTLE.asItem(), 1, -1), Item.WATER_BUCKET, new ItemStack(Item.DYE, 1, 3));
             CraftingRegistry.addShapelessRecipe(new ItemStack(BITTER_KETTLE.asItem(), 1, 0), new ItemStack(WATER_KETTLE.asItem(), 1, 0), new ItemStack(Item.DYE, 1, 3));
             CraftingRegistry.addShapelessRecipe(new ItemStack(BITTER_KETTLE.asItem(), 1, 1), new ItemStack(WATER_KETTLE.asItem(), 1, 1), new ItemStack(Item.DYE, 1, 3));
             CraftingRegistry.addShapelessRecipe(new ItemStack(BITTER_KETTLE.asItem(), 1, 2), new ItemStack(WATER_KETTLE.asItem(), 1, 2), new ItemStack(Item.DYE, 1, 3));
