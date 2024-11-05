@@ -87,7 +87,8 @@ public class KettleBlockEntity extends BlockEntity {
 //                    liquidLevel = 0;
 //                }
 
-                final int poison = BlockListener.KETTLE.id;
+                final int empty = BlockListener.KETTLE.id;
+                final int poison = BlockListener.POISON_KETTLE.id;
                 final int water = BlockListener.WATER_KETTLE.id;
                 final int milk = BlockListener.MILK_KETTLE.id;
                 final int bitter = BlockListener.BITTER_KETTLE.id;
@@ -95,6 +96,9 @@ public class KettleBlockEntity extends BlockEntity {
 
                 int blockId = world.getBlockId(x,y,z);
 
+                if (blockId == empty) {
+                    liquidHorizontalOffset = 10;
+                }
                 if (blockId == poison) {
                     liquidHorizontalOffset = 0;
                 }
