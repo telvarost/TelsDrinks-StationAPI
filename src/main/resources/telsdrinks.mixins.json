@@ -11,8 +11,6 @@
   "server": [
   ],
   "client": [
-    "ClientNetworkHandlerAccessor",
-    "ClientWorldMixin"
   ],
   "injectors": {
     "defaultRequire": 1

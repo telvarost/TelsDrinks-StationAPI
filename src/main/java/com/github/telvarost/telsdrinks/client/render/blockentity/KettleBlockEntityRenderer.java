@@ -61,7 +61,7 @@ public class KettleBlockEntityRenderer extends BlockEntityRenderer {
 //        double TEXTURE_HEIGHT = 6;
 
         double uv_x_offset = ((KettleBlockEntity) blockEntity).liquidHorizontalOffset;;
-        int uv_y_offset = ((KettleBlockEntity) blockEntity).liquidLevel;
+        int uv_y_offset = (5 - blockEntity.world.getBlockMeta(blockEntity.x, blockEntity.y, blockEntity.z));
 
         //double Z_FIGHT_OFFSET = 0.001;
         if (((KettleBlockEntity) blockEntity).dirX) {

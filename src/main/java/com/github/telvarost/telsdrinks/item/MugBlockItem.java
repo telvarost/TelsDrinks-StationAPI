@@ -67,27 +67,27 @@ public class MugBlockItem extends TemplateBlockItem implements CustomTooltipProv
 
             if (stack.itemId == BlockListener.CUP_OF_WATER.asItem().id && id == BlockListener.WATER_KETTLE.id) {
                 KettleBlockEntity kettleBlockEntity = (KettleBlockEntity)world.getBlockEntity(x, y, z);
-                kettleBlockEntity.putLiquidIn();
+                kettleBlockEntity.putLiquidIn(world, x, y, z, 2);
                 user.inventory.main[user.inventory.selectedSlot] = new ItemStack(BlockListener.EMPTY_MUG.asItem(), 1);
                 return true;
             } else if (stack.itemId == BlockListener.CUP_OF_MILK.asItem().id && id == BlockListener.MILK_KETTLE.id) {
                 KettleBlockEntity kettleBlockEntity = (KettleBlockEntity)world.getBlockEntity(x, y, z);
-                kettleBlockEntity.putLiquidIn();
+                kettleBlockEntity.putLiquidIn(world, x, y, z, 2);
                 user.inventory.main[user.inventory.selectedSlot] = new ItemStack(BlockListener.EMPTY_MUG.asItem(), 1);
                 return true;
             } else if (stack.itemId == BlockListener.POISON.asItem().id && id == BlockListener.POISON_KETTLE.id) {
                 KettleBlockEntity kettleBlockEntity = (KettleBlockEntity)world.getBlockEntity(x, y, z);
-                kettleBlockEntity.putLiquidIn();
+                kettleBlockEntity.putLiquidIn(world, x, y, z, 2);
                 user.inventory.main[user.inventory.selectedSlot] = new ItemStack(BlockListener.EMPTY_MUG.asItem(), 1);
                 return true;
             } else if (stack.itemId == BlockListener.APPLE_CIDER.asItem().id && id == BlockListener.APPLE_KETTLE.id) {
                 KettleBlockEntity kettleBlockEntity = (KettleBlockEntity)world.getBlockEntity(x, y, z);
-                kettleBlockEntity.putLiquidIn();
+                kettleBlockEntity.putLiquidIn(world, x, y, z, 2);
                 user.inventory.main[user.inventory.selectedSlot] = new ItemStack(BlockListener.EMPTY_MUG.asItem(), 1);
                 return true;
             } else if (stack.itemId == BlockListener.BITTER_WATER.asItem().id && id == BlockListener.BITTER_KETTLE.id) {
                 KettleBlockEntity kettleBlockEntity = (KettleBlockEntity)world.getBlockEntity(x, y, z);
-                kettleBlockEntity.putLiquidIn();
+                kettleBlockEntity.putLiquidIn(world, x, y, z, 2);
                 user.inventory.main[user.inventory.selectedSlot] = new ItemStack(BlockListener.EMPTY_MUG.asItem(), 1);
                 return true;
             }

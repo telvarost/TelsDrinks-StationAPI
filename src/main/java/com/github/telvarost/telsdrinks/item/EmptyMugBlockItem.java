@@ -75,7 +75,7 @@ public class EmptyMugBlockItem extends TemplateBlockItem {
 
     public boolean fill(int KettleID, ItemStack stack, PlayerEntity user, World world, int id, boolean heat, int x, int y, int z, Item result) {
         if (id == KettleID) {
-            if (((KettleBlockEntity) world.getBlockEntity(x,y,z)).takeLiquidOut()) {
+            if (((KettleBlockEntity) world.getBlockEntity(x,y,z)).takeLiquidOut(world, x, y, z, 2)) {
                 if (heat) {
                     if (stack.count == 1) {
                         user.inventory.main[user.inventory.selectedSlot] = new ItemStack(result, 1, 1);
