@@ -36,12 +36,14 @@ public class RecipeListener {
 
         if (type == RecipeRegisterEvent.Vanilla.CRAFTING_SHAPELESS.type()) {
             /** - Drink recipes */
+            CraftingRegistry.addShapelessRecipe(new ItemStack(DANDELION_TEA.asItem(), 1), new ItemStack(CUP_OF_WATER.asItem(), 1, 1), Block.DANDELION);
+            CraftingRegistry.addShapelessRecipe(new ItemStack(ROSE_TEA.asItem(), 1), new ItemStack(CUP_OF_WATER.asItem(), 1, 1), Block.ROSE);
             CraftingRegistry.addShapelessRecipe(new ItemStack(HOT_CHOCOLATE.asItem(), 1), new ItemStack(BITTER_WATER.asItem(), 1, 1), Item.SUGAR);
             CraftingRegistry.addShapelessRecipe(new ItemStack(LATTE.asItem(), 1), new ItemStack(BITTER_WATER.asItem(), 1, 1), Item.MILK_BUCKET);
             CraftingRegistry.addShapelessRecipe(new ItemStack(MOCHA.asItem(), 1), new ItemStack(BITTER_WATER.asItem(), 1, 1), Item.SUGAR, Item.MILK_BUCKET);
-            CraftingRegistry.addShapelessRecipe(new ItemStack(PUMPKIN_SPICE_LATTE.asItem(), 1), new ItemStack(BITTER_WATER.asItem(), 1, 1), Item.SUGAR, Item.MILK_BUCKET, Block.PUMPKIN);
-            CraftingRegistry.addShapelessRecipe(new ItemStack(DANDELION_TEA.asItem(), 1), new ItemStack(CUP_OF_WATER.asItem(), 1, 1), Block.DANDELION);
-            CraftingRegistry.addShapelessRecipe(new ItemStack(ROSE_TEA.asItem(), 1), new ItemStack(CUP_OF_WATER.asItem(), 1, 1), Block.ROSE);
+
+            /** - Added by JSONs */
+            //CraftingRegistry.addShapelessRecipe(new ItemStack(PUMPKIN_SPICE_LATTE.asItem(), 1), new ItemStack(BITTER_WATER.asItem(), 1, 1), Item.SUGAR, Item.MILK_BUCKET, Block.PUMPKIN);
 
             /** - Fill kettle recipes */
             CraftingRegistry.addShapelessRecipe(new ItemStack(POISON_KETTLE.asItem(), 1), new ItemStack(KETTLE.asItem(), 1, 5), Block.CACTUS);
