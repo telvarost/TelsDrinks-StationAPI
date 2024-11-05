@@ -2,10 +2,10 @@
   "multipart": [
     {
       "apply": {
-        "model": "telsdrinks:block/empty_mug_model"
+        "model": "telsdrinks:block/upside_down_mug_model"
       },
       "when": {
-        "empty": "true"
+        "upside_down": "true"
       }
     },
     {
@@ -13,7 +13,7 @@
         "model": "telsdrinks:block/rose_tea_model"
       },
       "when": {
-        "empty": "false"
+        "upside_down": "false"
       }
     },
     {

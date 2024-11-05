@@ -1,9 +1,9 @@
 {
   "variants": {
-    "empty=true": {
-      "model": "telsdrinks:block/empty_mug_model"
+    "upside_down=true": {
+      "model": "telsdrinks:block/upside_down_mug_model"
     },
-    "empty=false": {
+    "upside_down=false": {
       "model": "telsdrinks:block/poison_model"
     }
   }

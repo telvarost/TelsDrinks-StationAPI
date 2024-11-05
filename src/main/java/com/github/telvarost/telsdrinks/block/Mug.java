@@ -21,14 +21,14 @@ import net.modificationstation.stationapi.api.util.Identifier;
 public class Mug extends TemplateBlock {
 
     public static final Property<Boolean> HOT = BooleanProperty.of("hot");
-    public static final Property<Boolean> EMPTY = BooleanProperty.of("empty");
+    public static final Property<Boolean> UPSIDE_DOWN = BooleanProperty.of("upside_down");
     private final float MUG_WIDTH = 0.0625F * 5;
     private final float MUG_HEIGHT = 0.375F;
 
     public Mug(Identifier identifier, Material material) {
         super(identifier, material);
         setBoundingBox(MUG_WIDTH, 0.0F, MUG_WIDTH, 1.0F - MUG_WIDTH, MUG_HEIGHT, 1.0F - MUG_WIDTH);
-        setDefaultState(getDefaultState().with(EMPTY, true).with(HOT, false));
+        setDefaultState(getDefaultState().with(UPSIDE_DOWN, true).with(HOT, false));
         setHardness(0.5F);
     }
 
@@ -54,7 +54,7 @@ public class Mug extends TemplateBlock {
 
     @Override
     public void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(EMPTY);
+        builder.add(UPSIDE_DOWN);
         builder.add(HOT);
     }
 
@@ -63,7 +63,7 @@ public class Mug extends TemplateBlock {
         boolean isSneaking = context.getPlayer().isSneaking();
         boolean hot = context.getStack().getDamage() == 1;
 
-        return getDefaultState().with(EMPTY, isSneaking).with(HOT, hot);
+        return getDefaultState().with(UPSIDE_DOWN, isSneaking).with(HOT, hot);
     }
 
     @Override
