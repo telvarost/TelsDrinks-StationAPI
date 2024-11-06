@@ -68,20 +68,67 @@ public class Mug extends TemplateBlock {
 
     @Override
     public boolean canPlaceAt(World world, int x, int y, int z) {
-        return world.shouldSuffocate(x, y - 1, z);
+        return canPlaceOn(world, x, y - 1, z);
     }
+
+//    @Override
+//    public void neighborUpdate(World world, int x, int y, int z, int id) {
+//        boolean var6 = false;
+//        if (!world.shouldSuffocate(x, y - 1, z)) {
+//            var6 = true;
+//        }
+//
+//        if (var6) {
+//            this.dropStacks(world, x, y, z, world.getBlockMeta(x, y, z));
+//            world.setBlock(x, y, z, 0);
+//        }
+//    }
 
     @Override
     public void neighborUpdate(World world, int x, int y, int z, int id) {
-        boolean var6 = false;
-        if (!world.shouldSuffocate(x, y - 1, z)) {
-            var6 = true;
+        if (this.breakIfCannotPlaceAt(world, x, y, z)) {
+            int var6 = world.getBlockMeta(x, y, z);
+            boolean var7 = false;
+            if (!world.shouldSuffocate(x - 1, y, z) && var6 == 1) {
+                var7 = true;
+            }
+
+            if (!world.shouldSuffocate(x + 1, y, z) && var6 == 2) {
+                var7 = true;
+            }
+
+            if (!world.shouldSuffocate(x, y, z - 1) && var6 == 3) {
+                var7 = true;
+            }
+
+            if (!world.shouldSuffocate(x, y, z + 1) && var6 == 4) {
+                var7 = true;
+            }
+
+            if (!this.canPlaceOn(world, x, y - 1, z) && var6 == 5) {
+                var7 = true;
+            }
+
+            if (var7) {
+                this.dropStacks(world, x, y, z, world.getBlockMeta(x, y, z));
+                world.setBlock(x, y, z, 0);
+            }
         }
 
-        if (var6) {
+    }
+
+    private boolean breakIfCannotPlaceAt(World world, int x, int y, int z) {
+        if (!this.canPlaceAt(world, x, y, z)) {
             this.dropStacks(world, x, y, z, world.getBlockMeta(x, y, z));
             world.setBlock(x, y, z, 0);
+            return false;
+        } else {
+            return true;
         }
+    }
+
+    private boolean canPlaceOn(World world, int x, int y, int z) {
+        return world.shouldSuffocate(x, y, z) || world.getBlockId(x, y, z) == Block.FENCE.id;
     }
 
     // workaround stapi bug

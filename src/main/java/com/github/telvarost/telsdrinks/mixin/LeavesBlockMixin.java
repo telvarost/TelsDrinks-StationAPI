@@ -26,10 +26,6 @@ public abstract class LeavesBlockMixin extends TransparentBlock {
 
     @Inject(method = "breakLeaves", at = @At("HEAD"), cancellable = true)
     private void miscTweaks_dropAndRemove(World arg, int i, int j, int k, CallbackInfo ci) {
-//        if (0 >= Config.config.appleDropChance) {
-//            return;
-//        }
-
         /** - Special drop logic */
         int l = arg.getBlockMeta(i, j, k);
         miscTweaks_rareAppleDrop(arg, i, j, k, (l & 3));
@@ -37,10 +33,6 @@ public abstract class LeavesBlockMixin extends TransparentBlock {
 
     @Inject(method = "afterBreak", at = @At("HEAD"), cancellable = true)
     public void miscTweaks_afterBreak(World arg, PlayerEntity arg2, int i, int j, int k, int l, CallbackInfo ci) {
-//        if (0 >= Config.config.appleDropChance) {
-//            return;
-//        }
-
         if (!arg.isRemote && arg2.getHand() != null && arg2.getHand().itemId == Item.SHEARS.id) {
             /** - Do nothing */
         } else {
@@ -53,7 +45,6 @@ public abstract class LeavesBlockMixin extends TransparentBlock {
     private void miscTweaks_rareAppleDrop(World world, int x, int y, int z, int leafType) {
         if (0 == leafType) {
             Random random = new Random();
-            //boolean isSomethingDropped = (random.nextInt(1000/Config.config.appleDropChance) == 0) ? true : false;
             boolean isSomethingDropped = (random.nextInt(1000/5) == 0) ? true : false;
 
             if (isSomethingDropped) {

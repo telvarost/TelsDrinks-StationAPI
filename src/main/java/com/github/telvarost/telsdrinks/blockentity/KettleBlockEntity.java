@@ -2,7 +2,6 @@ package com.github.telvarost.telsdrinks.blockentity;
 
 import com.github.telvarost.telsdrinks.events.BlockListener;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.world.World;
 import net.modificationstation.stationapi.api.block.BlockState;
 import net.modificationstation.stationapi.api.state.property.Properties;
@@ -10,30 +9,14 @@ import net.modificationstation.stationapi.api.util.math.Direction;
 
 
 public class KettleBlockEntity extends BlockEntity {
+
     public boolean initialized = false;
     public boolean dirX = false;
-
     public int liquidHorizontalOffset = 0;
 
     public KettleBlockEntity() {
-
+        /** - Do nothing */
     }
-
-//    @Override
-//    public void readNbt(NbtCompound nbt) {
-//        super.readNbt(nbt);
-//        if (nbt.contains("liquidLevel"))
-//            this.liquidLevel = nbt.getInt("liquidLevel");
-//        else
-//            this.liquidLevel = 0;
-//    }
-//
-//    @Override
-//    public void writeNbt(NbtCompound nbt) {
-//        super.writeNbt(nbt);
-//        if (liquidLevel > 0)
-//            nbt.putInt("liquidLevel", liquidLevel);
-//    }
 
     public boolean takeLiquidOut(World world, int x, int y, int z, int amount) {
         int liquidLevel = (5 - world.getBlockMeta(x, y, z));
@@ -82,10 +65,6 @@ public class KettleBlockEntity extends BlockEntity {
                 if (dir == Direction.EAST || dir == Direction.WEST) {
                     dirX = true;
                 }
-
-//                if (state.getBlock().id == BlockListener.KETTLE.id) {
-//                    liquidLevel = 0;
-//                }
 
                 final int empty = BlockListener.KETTLE.id;
                 final int poison = BlockListener.POISON_KETTLE.id;

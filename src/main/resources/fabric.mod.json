@@ -24,6 +24,7 @@
       "com.github.telvarost.telsdrinks.events.BlockEntityListener",
       "com.github.telvarost.telsdrinks.events.BlockListener",
       "com.github.telvarost.telsdrinks.events.ItemListener",
+      "com.github.telvarost.telsdrinks.events.ItemUsedInCraftingListener",
       "com.github.telvarost.telsdrinks.events.RecipeListener"
     ],
     "stationapi:event_bus_client": [
