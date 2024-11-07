@@ -4,6 +4,7 @@ import com.github.telvarost.telsdrinks.events.BlockListener;
 import com.github.telvarost.telsdrinks.item.MugBlockItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.BlockView;
@@ -153,6 +154,10 @@ public class Mug extends TemplateBlock {
 
         if (blockId == BlockListener.CUP_OF_WATER.id) {
             drink(world, x, y, z, player, 0);
+            return true;
+        } else if (blockId == BlockListener.CUP_OF_LAVA.id) {
+            drink(world, x, y, z, player, -4);
+            player.fireTicks = 600;
             return true;
         } else if (blockId == BlockListener.CUP_OF_MILK.id) {
             if (heatValue == 1) {

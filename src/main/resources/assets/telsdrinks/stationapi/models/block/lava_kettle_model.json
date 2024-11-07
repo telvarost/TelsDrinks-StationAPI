@@ -1,0 +1,6 @@
+{
+	"parent": "telsdrinks:block/template_kettle_model",
+	"textures": {
+		"kettle": "telsdrinks:block/lava_kettle"
+	}
+}

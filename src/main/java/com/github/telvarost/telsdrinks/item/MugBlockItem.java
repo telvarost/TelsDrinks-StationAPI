@@ -23,6 +23,9 @@ public class MugBlockItem extends TemplateBlockItem implements CustomTooltipProv
 
         if (stack.itemId == BlockListener.CUP_OF_WATER.asItem().id) {
             // no healing
+        } else if (stack.itemId == BlockListener.CUP_OF_LAVA.asItem().id) {
+            user.damage(null, 4);
+            user.fireTicks = 600;
         } else if (stack.itemId == BlockListener.CUP_OF_MILK.asItem().id) {
             if (stack.getDamage() == 1) {
                 user.heal(1);
@@ -68,6 +71,11 @@ public class MugBlockItem extends TemplateBlockItem implements CustomTooltipProv
 
             if (0 != meta) {
                 if (stack.itemId == BlockListener.CUP_OF_WATER.asItem().id && id == BlockListener.WATER_KETTLE.id) {
+                    KettleBlockEntity kettleBlockEntity = (KettleBlockEntity) world.getBlockEntity(x, y, z);
+                    kettleBlockEntity.putLiquidIn(world, x, y, z, 2);
+                    user.inventory.main[user.inventory.selectedSlot] = new ItemStack(BlockListener.EMPTY_MUG.asItem(), 1);
+                    return true;
+                } else if (stack.itemId == BlockListener.CUP_OF_LAVA.asItem().id && id == BlockListener.LAVA_KETTLE.id) {
                     KettleBlockEntity kettleBlockEntity = (KettleBlockEntity) world.getBlockEntity(x, y, z);
                     kettleBlockEntity.putLiquidIn(world, x, y, z, 2);
                     user.inventory.main[user.inventory.selectedSlot] = new ItemStack(BlockListener.EMPTY_MUG.asItem(), 1);

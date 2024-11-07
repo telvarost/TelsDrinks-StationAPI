@@ -107,6 +107,18 @@ public class Kettle extends TemplateBlockWithEntity {
                 world.setBlockState(x, y, z, blockState.with(Properties.HORIZONTAL_FACING, direction));
                 return true;
             } else if (  (  blockId == KETTLE.id
+                      || (blockId == LAVA_KETTLE.id && liquidLevel < 5)
+                      || (blockId == POISON_KETTLE.id && liquidLevel == 0)
+                      )
+                      && heldItem.itemId == Item.LAVA_BUCKET.id
+            ) {
+                player.inventory.setStack(player.inventory.selectedSlot, new ItemStack(Item.BUCKET));
+                Direction direction = world.getBlockState(x, y, z).get(Properties.HORIZONTAL_FACING);
+                world.setBlock(x, y, z, LAVA_KETTLE.id);
+                BlockState blockState = world.getBlockState(x, y, z);
+                world.setBlockState(x, y, z, blockState.with(Properties.HORIZONTAL_FACING, direction));
+                return true;
+            } else if (  (  blockId == KETTLE.id
                          || (blockId == MILK_KETTLE.id && liquidLevel < 5)
                          || (blockId == POISON_KETTLE.id && liquidLevel == 0)
                          )
@@ -156,6 +168,14 @@ public class Kettle extends TemplateBlockWithEntity {
                     player.inventory.setStack(player.inventory.selectedSlot, new ItemStack(Item.WATER_BUCKET));
                     kettleBlockEntity.takeLiquidOut(world, x, y, z, 5);
                     return true;
+                } else if (blockId == LAVA_KETTLE.id) {
+                    player.inventory.setStack(player.inventory.selectedSlot, new ItemStack(Item.LAVA_BUCKET));
+                    Direction direction = world.getBlockState(x, y, z).get(Properties.HORIZONTAL_FACING);
+                    world.setBlock(x, y, z, KETTLE.id);
+                    BlockState blockState = world.getBlockState(x, y, z);
+                    world.setBlockState(x, y, z, blockState.with(Properties.HORIZONTAL_FACING, direction));
+                    world.setBlockMeta(x, y, z, 5);
+                    return true;
                 } else if (blockId == MILK_KETTLE.id) {
                     player.inventory.setStack(player.inventory.selectedSlot, new ItemStack(Item.MILK_BUCKET));
                     kettleBlockEntity.takeLiquidOut(world, x, y, z, 5);
@@ -179,6 +199,17 @@ public class Kettle extends TemplateBlockWithEntity {
                 player.inventory.setStack(player.inventory.selectedSlot, new ItemStack(EMPTY_MUG.asItem(), 1));
                 Direction direction = world.getBlockState(x, y, z).get(Properties.HORIZONTAL_FACING);
                 world.setBlock(x, y, z, WATER_KETTLE.id);
+                BlockState blockState = world.getBlockState(x, y, z);
+                world.setBlockState(x, y, z, blockState.with(Properties.HORIZONTAL_FACING, direction));
+                world.setBlockMeta(x, y, z, 4);
+                return true;
+            } else if (  (blockId == KETTLE.id || blockId == POISON_KETTLE.id)
+                      && heldItem.itemId == CUP_OF_LAVA.id
+                      && liquidLevel == 0
+            ) {
+                player.inventory.setStack(player.inventory.selectedSlot, new ItemStack(EMPTY_MUG.asItem(), 1));
+                Direction direction = world.getBlockState(x, y, z).get(Properties.HORIZONTAL_FACING);
+                world.setBlock(x, y, z, LAVA_KETTLE.id);
                 BlockState blockState = world.getBlockState(x, y, z);
                 world.setBlockState(x, y, z, blockState.with(Properties.HORIZONTAL_FACING, direction));
                 world.setBlockMeta(x, y, z, 4);

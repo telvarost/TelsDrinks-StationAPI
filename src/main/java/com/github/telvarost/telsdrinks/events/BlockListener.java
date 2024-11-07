@@ -23,8 +23,11 @@ public class BlockListener {
     public static Block MILK_KETTLE;
     public static Block POISON_KETTLE;
     public static Block WATER_KETTLE;
+    public static Block LAVA_KETTLE;
+
     public static Block EMPTY_MUG;
     public static Block CUP_OF_WATER;
+    public static Block CUP_OF_LAVA;
     public static Block CUP_OF_MILK;
     public static Block POISON;
     public static Block BITTER_WATER;
@@ -48,6 +51,7 @@ public class BlockListener {
         MILK_KETTLE = new Kettle(Identifier.of(NAMESPACE, "milk_kettle"), Material.CLAY).setSoundGroup(METAL_SOUND_GROUP).setTranslationKey(NAMESPACE, "milk_kettle");
         POISON_KETTLE = new Kettle(Identifier.of(NAMESPACE, "poison_kettle"), Material.CLAY).setSoundGroup(METAL_SOUND_GROUP).setTranslationKey(NAMESPACE, "poison_kettle");
         WATER_KETTLE = new Kettle(Identifier.of(NAMESPACE, "water_kettle"), Material.CLAY).setSoundGroup(METAL_SOUND_GROUP).setTranslationKey(NAMESPACE, "water_kettle");
+        LAVA_KETTLE = new Kettle(Identifier.of(NAMESPACE, "lava_kettle"), Material.CLAY).setLuminance(0.875F).setSoundGroup(METAL_SOUND_GROUP).setTranslationKey(NAMESPACE, "lava_kettle");
 
         EMPTY_MUG = new EmptyMug(Identifier.of(NAMESPACE, "empty_mug"), Material.PISTON_BREAKABLE).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "empty_mug");
         APPLE_CIDER = new Mug(Identifier.of(NAMESPACE, "apple_cider"), Material.PISTON_BREAKABLE).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "apple_cider");
@@ -55,6 +59,7 @@ public class BlockListener {
         CUP_OF_MILK = new Mug(Identifier.of(NAMESPACE, "cup_of_milk"), Material.PISTON_BREAKABLE).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "cup_of_milk");
         POISON = new Mug(Identifier.of(NAMESPACE, "poison"), Material.PISTON_BREAKABLE).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "poison");
         CUP_OF_WATER = new Mug(Identifier.of(NAMESPACE, "cup_of_water"), Material.PISTON_BREAKABLE).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "cup_of_water");
+        CUP_OF_LAVA = new Mug(Identifier.of(NAMESPACE, "cup_of_lava"), Material.PISTON_BREAKABLE).setLuminance(0.875F).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "cup_of_lava");
         HOT_CHOCOLATE = new Mug(Identifier.of(NAMESPACE, "hot_chocolate"), Material.PISTON_BREAKABLE).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "hot_chocolate");
         LATTE = new Mug(Identifier.of(NAMESPACE, "latte"), Material.PISTON_BREAKABLE).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "latte");
         MOCHA = new Mug(Identifier.of(NAMESPACE, "mocha"), Material.PISTON_BREAKABLE).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(NAMESPACE, "mocha");
@@ -69,12 +74,14 @@ public class BlockListener {
         ,   MILK_KETTLE
         ,   POISON_KETTLE
         ,   WATER_KETTLE
+        ,   LAVA_KETTLE
         ,   EMPTY_MUG
         ,   APPLE_CIDER
         ,   BITTER_WATER
         ,   CUP_OF_MILK
         ,   POISON
         ,   CUP_OF_WATER
+        ,   CUP_OF_LAVA
         ,   HOT_CHOCOLATE
         ,   LATTE
         ,   MOCHA

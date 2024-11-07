@@ -14,7 +14,12 @@ import net.minecraft.util.hit.HitResultType;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.modificationstation.stationapi.api.block.BlockState;
+import net.modificationstation.stationapi.api.state.property.Properties;
 import net.modificationstation.stationapi.api.template.item.TemplateBlockItem;
+import net.modificationstation.stationapi.api.util.math.Direction;
+
+import static com.github.telvarost.telsdrinks.events.BlockListener.KETTLE;
 
 public class EmptyMugBlockItem extends TemplateBlockItem {
     public EmptyMugBlockItem(int i) {
@@ -114,6 +119,18 @@ public class EmptyMugBlockItem extends TemplateBlockItem {
                 return true;
             if (fill(BlockListener.BITTER_KETTLE.id, stack, user, world, id, heat, x, y, z, BlockListener.BITTER_WATER.asItem()))
                 return true;
+
+
+            if (fill(BlockListener.LAVA_KETTLE.id, stack, user, world, id, heat, x, y, z, BlockListener.CUP_OF_LAVA.asItem())) {
+                if (5 == world.getBlockMeta(x, y, z)) {
+                    Direction direction = world.getBlockState(x, y, z).get(Properties.HORIZONTAL_FACING);
+                    world.setBlock(x, y, z, KETTLE.id);
+                    BlockState blockState = world.getBlockState(x, y, z);
+                    world.setBlockState(x, y, z, blockState.with(Properties.HORIZONTAL_FACING, direction));
+                    world.setBlockMeta(x, y, z, 5);
+                }
+                return true;
+            }
         }
 
         return super.useOnBlock(stack, user, world, x, y, z, side);

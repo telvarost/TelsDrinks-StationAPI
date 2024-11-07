@@ -72,11 +72,12 @@ public class KettleBlockEntity extends BlockEntity {
                 final int milk = BlockListener.MILK_KETTLE.id;
                 final int bitter = BlockListener.BITTER_KETTLE.id;
                 final int apple = BlockListener.APPLE_KETTLE.id;
+                final int lava = BlockListener.LAVA_KETTLE.id;
 
                 int blockId = world.getBlockId(x,y,z);
 
                 if (blockId == empty) {
-                    liquidHorizontalOffset = 10;
+                    liquidHorizontalOffset = 12;
                 }
                 if (blockId == poison) {
                     liquidHorizontalOffset = 0;
@@ -92,6 +93,9 @@ public class KettleBlockEntity extends BlockEntity {
                 }
                 if (blockId == apple) {
                     liquidHorizontalOffset = 8;
+                }
+                if (blockId == lava) {
+                    liquidHorizontalOffset = 10;
                 }
 
                 initialized = true;

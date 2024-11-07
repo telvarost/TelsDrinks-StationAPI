@@ -1,0 +1,25 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "telsdrinks:block/upside_down_mug_model"
+      },
+      "when": {
+        "upside_down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "telsdrinks:block/cup_of_lava_model"
+      },
+      "when": {
+        "upside_down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "telsdrinks:block/steam_model"
+      }
+    }
+  ]
+}
