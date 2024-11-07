@@ -39,6 +39,7 @@ public class RecipeListener {
             /** - Drink recipes */
             CraftingRegistry.addShapelessRecipe(new ItemStack(DANDELION_TEA.asItem(), 1), new ItemStack(CUP_OF_WATER.asItem(), 1, 1), Block.DANDELION);
             CraftingRegistry.addShapelessRecipe(new ItemStack(ROSE_TEA.asItem(), 1), new ItemStack(CUP_OF_WATER.asItem(), 1, 1), Block.ROSE);
+            CraftingRegistry.addShapelessRecipe(new ItemStack(FAIRY_TEA.asItem(), 1), new ItemStack(CUP_OF_WATER.asItem(), 1, 1), Item.GLOWSTONE_DUST, Block.DANDELION, Block.ROSE);
             CraftingRegistry.addShapelessRecipe(new ItemStack(HOT_CHOCOLATE.asItem(), 1), new ItemStack(BITTER_WATER.asItem(), 1, 1), Item.SUGAR);
             CraftingRegistry.addShapelessRecipe(new ItemStack(LATTE.asItem(), 1), new ItemStack(BITTER_WATER.asItem(), 1, 1), Item.MILK_BUCKET);
             CraftingRegistry.addShapelessRecipe(new ItemStack(MOCHA.asItem(), 1), new ItemStack(BITTER_WATER.asItem(), 1, 1), Item.SUGAR, Item.MILK_BUCKET);

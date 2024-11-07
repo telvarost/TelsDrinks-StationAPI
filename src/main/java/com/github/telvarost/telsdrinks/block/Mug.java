@@ -201,6 +201,10 @@ public class Mug extends TemplateBlock {
         } else if (blockId == BlockListener.ROSE_TEA.id) {
             drink(world, x, y, z, player, 1);
             return true;
+        } else if (blockId == BlockListener.FAIRY_TEA.id) {
+            drink(world, x, y, z, player, 5);
+            player.fireTicks = 0;
+            return true;
         }
 
         return false;

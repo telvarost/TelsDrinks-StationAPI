@@ -58,6 +58,9 @@ public class MugBlockItem extends TemplateBlockItem implements CustomTooltipProv
             user.heal(1);
         } else if (stack.itemId == BlockListener.ROSE_TEA.asItem().id) {
             user.heal(1);
+        } else if (stack.itemId == BlockListener.FAIRY_TEA.asItem().id) {
+            user.heal(5);
+            user.fireTicks = 0;
         }
 
         return new ItemStack(BlockListener.EMPTY_MUG.asItem(), 1, 1);
