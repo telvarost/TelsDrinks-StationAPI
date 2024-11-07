@@ -77,25 +77,25 @@ public class KettleBlockEntity extends BlockEntity {
                 int blockId = world.getBlockId(x,y,z);
 
                 if (blockId == empty) {
-                    liquidHorizontalOffset = 12;
-                }
-                if (blockId == poison) {
                     liquidHorizontalOffset = 0;
                 }
-                if (blockId == water) {
+                if (blockId == poison) {
                     liquidHorizontalOffset = 2;
                 }
-                if (blockId == milk) {
+                if (blockId == water) {
                     liquidHorizontalOffset = 4;
                 }
-                if (blockId == bitter) {
+                if (blockId == milk) {
                     liquidHorizontalOffset = 6;
                 }
-                if (blockId == apple) {
+                if (blockId == bitter) {
                     liquidHorizontalOffset = 8;
                 }
-                if (blockId == lava) {
+                if (blockId == apple) {
                     liquidHorizontalOffset = 10;
+                }
+                if (blockId == lava) {
+                    liquidHorizontalOffset = 12;
                 }
 
                 initialized = true;

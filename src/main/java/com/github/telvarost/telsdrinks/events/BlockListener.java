@@ -1,5 +1,6 @@
 package com.github.telvarost.telsdrinks.events;
 
+import com.github.telvarost.telsdrinks.block.EmptyKettle;
 import com.github.telvarost.telsdrinks.block.EmptyMug;
 import com.github.telvarost.telsdrinks.block.Kettle;
 import com.github.telvarost.telsdrinks.block.Mug;
@@ -46,7 +47,7 @@ public class BlockListener {
     @EventListener
     public void registerBlocks(BlockRegistryEvent event) {
 
-        KETTLE = new Kettle(Identifier.of(NAMESPACE, "kettle"), Material.CLAY).setSoundGroup(METAL_SOUND_GROUP).setTranslationKey(NAMESPACE, "kettle");
+        KETTLE = new EmptyKettle(Identifier.of(NAMESPACE, "kettle"), Material.CLAY).setSoundGroup(METAL_SOUND_GROUP).setTranslationKey(NAMESPACE, "kettle");
         APPLE_KETTLE = new Kettle(Identifier.of(NAMESPACE, "apple_kettle"), Material.CLAY).setSoundGroup(METAL_SOUND_GROUP).setTranslationKey(NAMESPACE, "apple_kettle");
         BITTER_KETTLE = new Kettle(Identifier.of(NAMESPACE, "bitter_kettle"), Material.CLAY).setSoundGroup(METAL_SOUND_GROUP).setTranslationKey(NAMESPACE, "bitter_kettle");
         MILK_KETTLE = new Kettle(Identifier.of(NAMESPACE, "milk_kettle"), Material.CLAY).setSoundGroup(METAL_SOUND_GROUP).setTranslationKey(NAMESPACE, "milk_kettle");
