@@ -130,7 +130,6 @@ public class RecipeListener {
             CraftingRegistry.addShapelessRecipe(new ItemStack(BITTER_KETTLE.asItem(), 1), new ItemStack(KETTLE.asItem(), 1, -1), new ItemStack(BITTER_WATER.asItem(), 1, -1), new ItemStack(BITTER_WATER.asItem(), 1, -1), new ItemStack(BITTER_WATER.asItem(), 1, -1));
 
             /** - Clean out kettle recipes */
-            CraftingRegistry.addShapelessRecipe(new ItemStack(KETTLE.asItem(), 1), new ItemStack(KETTLE.asItem(), 1, -1));
             CraftingRegistry.addShapelessRecipe(new ItemStack(KETTLE.asItem(), 1), new ItemStack(POISON_KETTLE.asItem(), 1, -1));
             CraftingRegistry.addShapelessRecipe(new ItemStack(KETTLE.asItem(), 1), new ItemStack(WATER_KETTLE.asItem(), 1, -1));
             CraftingRegistry.addShapelessRecipe(new ItemStack(KETTLE.asItem(), 1), new ItemStack(LAVA_KETTLE.asItem(), 1, -1));
