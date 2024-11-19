@@ -18,6 +18,23 @@ public class KettleBlockEntity extends BlockEntity {
         /** - Do nothing */
     }
 
+    public boolean takeLiquidOut(int amount) {
+        int liquidLevel = (5 - world.getBlockMeta(x, y, z));
+
+        if (liquidLevel > 0)  {
+            liquidLevel = liquidLevel - amount;
+
+            if (liquidLevel < 0) {
+                liquidLevel = 0;
+            }
+
+            world.setBlockMeta(x, y, z, (5 - liquidLevel));
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public boolean takeLiquidOut(World world, int x, int y, int z, int amount) {
         int liquidLevel = (5 - world.getBlockMeta(x, y, z));
 
@@ -26,6 +43,27 @@ public class KettleBlockEntity extends BlockEntity {
 
             if (liquidLevel < 0) {
                 liquidLevel = 0;
+            }
+
+            world.setBlockMeta(x, y, z, (5 - liquidLevel));
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean putLiquidIn(int amount) {
+        int liquidLevel = (5 - world.getBlockMeta(x, y, z));
+
+        if (liquidLevel < 5)  {
+            if (liquidLevel == 0) {
+                liquidLevel = liquidLevel + (amount - 1);
+            } else {
+                liquidLevel = liquidLevel + amount;
+            }
+
+            if (liquidLevel > 5) {
+                liquidLevel = 5;
             }
 
             world.setBlockMeta(x, y, z, (5 - liquidLevel));
