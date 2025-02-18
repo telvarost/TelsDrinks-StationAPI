@@ -15,7 +15,7 @@ This mod also adds cocoa as a rare drop from rainforest oak leaves.
 Sticks were added as a rare oak leaf drop in other biomes to help signify that the mod is working.
 * If the biome is dropping sticks it won't drop apples or cocoa!
 
-How the mod works:
+### How the mod works:
 * Kettles are heated by placing lava, fire, or a lit furnace below them.
 * When kettles are heated the hot variant of a drink is given.
 * Right click with a mug to take a drink out of a kettle.
