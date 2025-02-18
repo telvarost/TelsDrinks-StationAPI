@@ -4,6 +4,8 @@ Adds some fun drinks into old Minecraft :D
 
 ## Description
 
+### How to get ingredients:
+
 This mod adds apples as a rare drop from seasonal forest oak leaves and as a super rare drop from normal forest oak leaves.
 * Look for the green grass!
 * Apples are used to make apple cider and hot cider.
@@ -16,6 +18,7 @@ Sticks were added as a rare oak leaf drop in other biomes to help signify that t
 * If the biome is dropping sticks it won't drop apples or cocoa!
 
 ### How the mod works:
+
 * Kettles are heated by placing lava, fire, or a lit furnace below them.
 * When kettles are heated the hot variant of a drink is given.
 * Right click with a mug to take a drink out of a kettle.
