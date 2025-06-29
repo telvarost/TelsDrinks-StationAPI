@@ -117,7 +117,15 @@ dependencies {
 		transitive false
 	}
 
-	modRuntimeOnly ("maven.modrinth:clientsideessentials-stationapi:${project.clientsideessentials_version}") {
+	modImplementation ("maven.modrinth:clientsideessentials-stationapi:${project.clientsideessentials_version}") {
+		transitive false
+	}
+
+	modImplementation ("maven.modrinth:zastavkaapi:${project.zastavkaapi_version}") {
+		transitive false
+	}
+
+	modImplementation ("maven.modrinth:oldandornate-stationapi:${project.oldandornate_version}") {
 		transitive false
 	}
 

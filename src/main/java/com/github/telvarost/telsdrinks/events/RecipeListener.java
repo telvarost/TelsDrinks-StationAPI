@@ -1,5 +1,6 @@
 package com.github.telvarost.telsdrinks.events;
 
+import com.github.telvarost.telsdrinks.ModHelperOldAndOrnate;
 import net.fabricmc.loader.api.FabricLoader;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.block.Block;
@@ -47,7 +48,7 @@ public class RecipeListener {
 
             /** - Compatibility recipes/extra recipes when other mods are loaded */
             if (FabricLoader.getInstance().isModLoaded("oldandornate")) {
-                //CraftingRegistry.addShapelessRecipe(new ItemStack(FAIRY_TEA.asItem(), 1), new ItemStack(CUP_OF_WATER.asItem(), 1, 1), Block.DANDELION, Block.ROSE);
+                CraftingRegistry.addShapelessRecipe(new ItemStack(FAIRY_TEA.asItem(), 1), new ItemStack(CUP_OF_WATER.asItem(), 1, 1), ModHelperOldAndOrnate.getOldAndOrnateStarFlowerBlock(), Block.ROSE);
             }
             /** - Added by JSON file(s) */
             //CraftingRegistry.addShapelessRecipe(new ItemStack(PUMPKIN_SPICE_LATTE.asItem(), 1), new ItemStack(BITTER_WATER.asItem(), 1, 1), Item.SUGAR, Item.MILK_BUCKET, Block.PUMPKIN);
