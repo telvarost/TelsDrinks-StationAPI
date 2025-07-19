@@ -19,7 +19,7 @@ public class CowEntityMixin {
     )
     public void telsDrinks_interact(PlayerEntity player, CallbackInfoReturnable<Boolean> cir) {
         ItemStack stack = player.inventory.getSelectedItem();
-        if (stack != null && stack.itemId == BlockListener.EMPTY_MUG.id) {
+        if (stack != null && stack.itemId == BlockListener.EMPTY_MUG.asItem().id) {
             if (stack.count == 1) {
                 player.inventory.setStack(player.inventory.selectedSlot, new ItemStack(BlockListener.CUP_OF_MILK.asItem(), 1));
             } else {
