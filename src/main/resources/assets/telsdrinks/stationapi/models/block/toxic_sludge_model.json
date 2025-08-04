@@ -1,0 +1,6 @@
+{
+	"parent": "telsdrinks:block/template_filled_cup_model",
+	"textures": {
+		"drink": "telsdrinks:block/toxic_sludge"
+	}
+}

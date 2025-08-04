@@ -1,6 +1,6 @@
 package com.github.telvarost.telsdrinks.events.client;
 
-import com.github.telvarost.telsdrinks.ModHelper;
+import com.github.telvarost.telsdrinks.TelsDrinks;
 import com.github.telvarost.telsdrinks.events.BlockListener;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.block.Block;
@@ -13,7 +13,7 @@ public class ItemPredicateListener {
     public void registerItemModelPredicates(ItemModelPredicateProviderRegistryEvent event) {
         for (Block block : new Block[]{BlockListener.BITTER_WATER, BlockListener.CUP_OF_WATER, BlockListener.CUP_OF_MILK, BlockListener.APPLE_CIDER}) {
             Item item = block.asItem();
-            event.registry.register(item, ModHelper.NAMESPACE.id("hot"),
+            event.registry.register(item, TelsDrinks.TELS_DRINKS.id("hot"),
                     (stack, world, entity, seed) -> (float)stack.getDamage());
         }
     }

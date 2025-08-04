@@ -1,6 +1,6 @@
 package com.github.telvarost.telsdrinks.events;
 
-import com.github.telvarost.telsdrinks.ModHelper;
+import com.github.telvarost.telsdrinks.TelsDrinks;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -14,7 +14,7 @@ public class CreativeListener {
 
     @EventListener
     public void onTabInit(TabRegistryEvent event){
-        tabTelsDrinks = new SimpleTab(ModHelper.NAMESPACE.id("kettle"), BlockListener.KETTLE.asItem());
+        tabTelsDrinks = new SimpleTab(TelsDrinks.TELS_DRINKS.id("kettle"), BlockListener.KETTLE.asItem());
         event.register(tabTelsDrinks);
         for (Block block : BlockListener.blocks){
             tabTelsDrinks.addItem(new ItemStack(block.asItem(), 1));

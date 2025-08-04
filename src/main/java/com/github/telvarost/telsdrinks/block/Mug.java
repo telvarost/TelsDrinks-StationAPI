@@ -169,12 +169,18 @@ public class Mug extends TemplateBlock {
         } else if (blockId == BlockListener.POISON.id) {
             drink(world, x, y, z, player, -1);
             return true;
+        } else if (blockId == BlockListener.TOXIC_SLUDGE.id) {
+            drink(world, x, y, z, player, -7);
+            return true;
         } else if (blockId == BlockListener.APPLE_CIDER.id) {
             if (heatValue == 1) {
                 drink(world, x, y, z, player, 2);
             } else {
                 drink(world, x, y, z, player, 1);
             }
+            return true;
+        } else if (blockId == BlockListener.ELIXIR.id) {
+            drink(world, x, y, z, player, 14);
             return true;
         } else if (blockId == BlockListener.BITTER_WATER.id) {
             if (heatValue == 1) {

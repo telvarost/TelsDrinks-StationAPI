@@ -21,7 +21,7 @@
   "environment": "*",
   "entrypoints": {
     "stationapi:event_bus": [
-      "com.github.telvarost.telsdrinks.ModHelper",
+      "com.github.telvarost.telsdrinks.TelsDrinks",
       "com.github.telvarost.telsdrinks.events.BlockEntityListener",
       "com.github.telvarost.telsdrinks.events.BlockListener",
       "com.github.telvarost.telsdrinks.events.ItemListener",

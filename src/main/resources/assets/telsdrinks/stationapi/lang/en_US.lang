@@ -2,6 +2,7 @@ item.@.clay_mug.name=Clay Mug
 
 tile.@.kettle.name=Kettle
 tile.@.apple_kettle.name=Apple Kettle
+tile.@.elixir_kettle.name=Elixir Kettle
 tile.@.bitter_kettle.name=Bitter Kettle
 tile.@.lava_kettle.name=Lava Kettle
 tile.@.milk_kettle.name=Milk Kettle
@@ -14,8 +15,10 @@ tile.@.cup_of_milk.name=Cup of Milk
 tile.@.steamed_milk.name=Steamed Milk
 tile.@.cup_of_lava.name=Cup of Lava
 tile.@.poison.name=Poison
+tile.@.toxic_sludge.name=Toxic Sludge
 tile.@.apple_cider.name=Apple Cider
 tile.@.hot_cider.name=Hot Cider
+tile.@.elixir.name=Elixir
 tile.@.bitter_water.name=Bitter Water
 tile.@.hot_cocoa.name=Hot Cocoa
 tile.@.hot_chocolate.name=Hot Chocolate
@@ -25,5 +28,10 @@ tile.@.pumpkin_spice_latte.name=Pumpkin Spice Latte
 tile.@.rose_tea.name=Rose Tea
 tile.@.dandelion_tea.name=Dandelion Tea
 tile.@.fairy_tea.name=Fairy Tea
+
+tile.@.apple_cake.name=Apple Cake
+tile.@.chocolate_cake.name=Chocolate Cake
+tile.@.golden_cake.name=Golden Cake
+tile.@.poison_cake.name=Poison Cake
 
 tab.@.kettle.name=Tels Drinks

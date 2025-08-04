@@ -1,6 +1,6 @@
 package com.github.telvarost.telsdrinks.events;
 
-import com.github.telvarost.telsdrinks.ModHelper;
+import com.github.telvarost.telsdrinks.TelsDrinks;
 import com.github.telvarost.telsdrinks.item.ClayMug;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.item.Item;
@@ -12,7 +12,7 @@ public class ItemListener {
 
     @EventListener
     public void registerItems(ItemRegistryEvent event) {
-        CLAY_MUG = new ClayMug(ModHelper.NAMESPACE.id("clay_mug")).setTranslationKey(ModHelper.NAMESPACE, "clay_mug");
+        CLAY_MUG = new ClayMug(TelsDrinks.TELS_DRINKS.id("clay_mug")).setTranslationKey(TelsDrinks.TELS_DRINKS, "clay_mug");
 
         items = new Item[]{
                 CLAY_MUG

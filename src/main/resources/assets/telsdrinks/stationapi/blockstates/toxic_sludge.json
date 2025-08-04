@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "upside_down=true": {
+      "model": "telsdrinks:block/upside_down_mug_model"
+    },
+    "upside_down=false": {
+      "model": "telsdrinks:block/toxic_sludge_model"
+    }
+  }
+}

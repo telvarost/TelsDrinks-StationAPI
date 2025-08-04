@@ -75,6 +75,7 @@ public class Kettle extends TemplateBlockWithEntity {
     public boolean onUse(World world, int x, int y, int z, PlayerEntity player) {
         int blockId = world.getBlockId(x, y, z);
         int liquidLevel = (5 - world.getBlockMeta(x, y, z));
+        int kettleBlockMeta = world.getBlockMeta(x, y, z);
         ItemStack heldItem = player.inventory.getSelectedItem();
         KettleBlockEntity kettleBlockEntity = (KettleBlockEntity)world.getBlockEntity(x, y, z);
 
@@ -143,7 +144,22 @@ public class Kettle extends TemplateBlockWithEntity {
                 world.setBlock(x, y, z, APPLE_KETTLE.id);
                 BlockState blockState = world.getBlockState(x, y, z);
                 world.setBlockState(x, y, z, blockState.with(Properties.HORIZONTAL_FACING, direction));
-                world.setBlockMeta(x, y, z, liquidLevel);
+                world.setBlockMeta(x, y, z, kettleBlockMeta);
+                return true;
+            } else if (  blockId == WATER_KETTLE.id
+                      && heldItem.itemId == Item.GOLDEN_APPLE.id
+                      && liquidLevel > 0
+            ) {
+                if (heldItem.count == 1) {
+                    player.inventory.setStack(player.inventory.selectedSlot, null);
+                } else {
+                    heldItem.count--;
+                }
+                Direction direction =  world.getBlockState(x,y,z).get(Properties.HORIZONTAL_FACING);
+                world.setBlock(x, y, z, ELIXIR_KETTLE.id);
+                BlockState blockState = world.getBlockState(x, y, z);
+                world.setBlockState(x, y, z, blockState.with(Properties.HORIZONTAL_FACING, direction));
+                world.setBlockMeta(x, y, z, kettleBlockMeta);
                 return true;
             } else if (  blockId == WATER_KETTLE.id
                       && heldItem.itemId == Item.DYE.id
@@ -159,7 +175,7 @@ public class Kettle extends TemplateBlockWithEntity {
                 world.setBlock(x, y, z, BITTER_KETTLE.id);
                 BlockState blockState = world.getBlockState(x, y, z);
                 world.setBlockState(x, y, z, blockState.with(Properties.HORIZONTAL_FACING, direction));
-                world.setBlockMeta(x, y, z, liquidLevel);
+                world.setBlockMeta(x, y, z, kettleBlockMeta);
                 return true;
             } else if (  heldItem.itemId == Item.BUCKET.id
                       && liquidLevel == 5
@@ -237,6 +253,18 @@ public class Kettle extends TemplateBlockWithEntity {
                 player.inventory.setStack(player.inventory.selectedSlot, new ItemStack(EMPTY_MUG.asItem(), 1));
                 Direction direction = world.getBlockState(x, y, z).get(Properties.HORIZONTAL_FACING);
                 world.setBlock(x, y, z, APPLE_KETTLE.id);
+                BlockState blockState = world.getBlockState(x, y, z);
+                world.setBlockState(x, y, z, blockState.with(Properties.HORIZONTAL_FACING, direction));
+                world.setBlockMeta(x, y, z, 4);
+                return true;
+            } else if (  (  (blockId == KETTLE.id)
+                         || (blockId == POISON_KETTLE.id && liquidLevel == 0)
+                         )
+                      && (heldItem.itemId == ELIXIR.asItem().id)
+            ) {
+                player.inventory.setStack(player.inventory.selectedSlot, new ItemStack(EMPTY_MUG.asItem(), 1));
+                Direction direction = world.getBlockState(x, y, z).get(Properties.HORIZONTAL_FACING);
+                world.setBlock(x, y, z, ELIXIR_KETTLE.id);
                 BlockState blockState = world.getBlockState(x, y, z);
                 world.setBlockState(x, y, z, blockState.with(Properties.HORIZONTAL_FACING, direction));
                 world.setBlockMeta(x, y, z, 4);

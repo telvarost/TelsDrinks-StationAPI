@@ -34,12 +34,16 @@ public class MugBlockItem extends TemplateBlockItem implements CustomTooltipProv
             }
         } else if (stack.itemId == BlockListener.POISON.asItem().id) {
             user.damage(null, 1);
+        } else if (stack.itemId == BlockListener.TOXIC_SLUDGE.asItem().id) {
+            user.damage(null, 7);
         } else if (stack.itemId == BlockListener.APPLE_CIDER.asItem().id) {
             if (stack.getDamage() == 1) {
                 user.heal(2);
             } else {
                 user.heal(1);
             }
+        } else if (stack.itemId == BlockListener.ELIXIR.asItem().id) {
+            user.heal(14);
         } else if (stack.itemId == BlockListener.BITTER_WATER.asItem().id) {
             if (stack.getDamage() == 1) {
                 user.heal(1);
@@ -98,6 +102,11 @@ public class MugBlockItem extends TemplateBlockItem implements CustomTooltipProv
                     kettleBlockEntity.putLiquidIn(world, x, y, z, 2);
                     user.inventory.main[user.inventory.selectedSlot] = new ItemStack(BlockListener.EMPTY_MUG.asItem(), 1);
                     return true;
+                } else if (stack.itemId == BlockListener.ELIXIR.asItem().id && id == BlockListener.ELIXIR_KETTLE.id) {
+                    KettleBlockEntity kettleBlockEntity = (KettleBlockEntity) world.getBlockEntity(x, y, z);
+                    kettleBlockEntity.putLiquidIn(world, x, y, z, 2);
+                    user.inventory.main[user.inventory.selectedSlot] = new ItemStack(BlockListener.EMPTY_MUG.asItem(), 1);
+                    return true;
                 } else if (stack.itemId == BlockListener.BITTER_WATER.asItem().id && id == BlockListener.BITTER_KETTLE.id) {
                     KettleBlockEntity kettleBlockEntity = (KettleBlockEntity) world.getBlockEntity(x, y, z);
                     kettleBlockEntity.putLiquidIn(world, x, y, z, 2);
@@ -120,8 +129,6 @@ public class MugBlockItem extends TemplateBlockItem implements CustomTooltipProv
             if (stack.getDamage() == 1) {
                 return new String[]{ TranslationStorage.getInstance().get("tile.telsdrinks.steamed_milk.name") };
             }
-        } else if (stack.itemId == BlockListener.POISON.asItem().id) {
-            return new String[]{originalTooltip};
         } else if (stack.itemId == BlockListener.APPLE_CIDER.asItem().id) {
             if (stack.getDamage() == 1) {
                 return new String[]{ TranslationStorage.getInstance().get("tile.telsdrinks.hot_cider.name") };
