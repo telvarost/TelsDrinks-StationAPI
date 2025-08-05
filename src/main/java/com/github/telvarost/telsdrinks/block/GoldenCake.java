@@ -48,6 +48,7 @@ public class GoldenCake extends TemplateCakeBlock {
     private void tryEat(World world, int x, int y, int z, PlayerEntity player) {
         if (player.health < 20) {
             player.heal(6);
+            player.fireTicks = 0;
             int var6 = world.getBlockMeta(x, y, z) + 1;
             if (var6 >= 6) {
                 world.setBlock(x, y, z, 0);

@@ -162,8 +162,15 @@ public class Mug extends TemplateBlock {
         } else if (blockId == BlockListener.CUP_OF_MILK.id) {
             if (heatValue == 1) {
                 drink(world, x, y, z, player, 1);
+                if (player.fallDistance > 2.0F) {
+                    player.fallDistance -= 1.0F;
+                }
             } else {
                 drink(world, x, y, z, player, 0);
+            }
+
+            if (player.fallDistance > 1.0F) {
+                player.fallDistance -= 1.0F;
             }
             return true;
         } else if (blockId == BlockListener.POISON.id) {
@@ -216,6 +223,11 @@ public class Mug extends TemplateBlock {
         } else if (blockId == BlockListener.FAIRY_TEA.id) {
             drink(world, x, y, z, player, 5);
             player.fireTicks = 0;
+            if (270 < player.air) {
+                player.air = 300;
+            } else {
+                player.air += 30;
+            }
             return true;
         }
 

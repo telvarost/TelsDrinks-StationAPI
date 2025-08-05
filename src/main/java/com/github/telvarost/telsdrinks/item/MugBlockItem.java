@@ -29,8 +29,15 @@ public class MugBlockItem extends TemplateBlockItem implements CustomTooltipProv
         } else if (stack.itemId == BlockListener.CUP_OF_MILK.asItem().id) {
             if (stack.getDamage() == 1) {
                 user.heal(1);
+                if (user.fallDistance > 2.0F) {
+                    user.fallDistance -= 1.0F;
+                }
             } else {
                 user.heal(0);
+            }
+
+            if (user.fallDistance > 1.0F) {
+                user.fallDistance -= 1.0F;
             }
         } else if (stack.itemId == BlockListener.POISON.asItem().id) {
             user.damage(null, 1);
@@ -70,6 +77,11 @@ public class MugBlockItem extends TemplateBlockItem implements CustomTooltipProv
         } else if (stack.itemId == BlockListener.FAIRY_TEA.asItem().id) {
             user.heal(5);
             user.fireTicks = 0;
+            if (270 < user.air) {
+                user.air = 300;
+            } else {
+                user.air += 30;
+            }
         }
 
         return new ItemStack(BlockListener.EMPTY_MUG.asItem(), 1, 1);
