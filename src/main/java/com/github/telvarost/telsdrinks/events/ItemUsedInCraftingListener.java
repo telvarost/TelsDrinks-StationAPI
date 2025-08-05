@@ -21,13 +21,14 @@ public class ItemUsedInCraftingListener {
                   || (ELIXIR.asItem().id       == event.itemUsed.itemId)
                   || (BITTER_WATER.asItem().id == event.itemUsed.itemId)
                   )
-               && (TOXIC_SLUDGE.asItem().id  != event.itemCrafted.itemId)
-               && (DANDELION_TEA.asItem().id != event.itemCrafted.itemId)
-               && (ROSE_TEA.asItem().id      != event.itemCrafted.itemId)
-               && (FAIRY_TEA.asItem().id     != event.itemCrafted.itemId)
-               && (HOT_CHOCOLATE.asItem().id != event.itemCrafted.itemId)
-               && (LATTE.asItem().id         != event.itemCrafted.itemId)
-               && (MOCHA.asItem().id         != event.itemCrafted.itemId)
+               && (TOXIC_SLUDGE.asItem().id    != event.itemCrafted.itemId)
+               && (ANGELIC_ELIXIR.asItem().id  != event.itemCrafted.itemId)
+               && (DANDELION_TEA.asItem().id   != event.itemCrafted.itemId)
+               && (ROSE_TEA.asItem().id        != event.itemCrafted.itemId)
+               && (FAIRY_TEA.asItem().id       != event.itemCrafted.itemId)
+               && (HOT_CHOCOLATE.asItem().id   != event.itemCrafted.itemId)
+               && (LATTE.asItem().id           != event.itemCrafted.itemId)
+               && (MOCHA.asItem().id           != event.itemCrafted.itemId)
             ) {
                 event.craftingMatrix.setStack(event.itemOrdinal, new ItemStack(EMPTY_MUG.asItem(), 1));
             }

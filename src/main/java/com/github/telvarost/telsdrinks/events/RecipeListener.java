@@ -47,6 +47,7 @@ public class RecipeListener {
         if (type == RecipeRegisterEvent.Vanilla.CRAFTING_SHAPELESS.type()) {
             /** - Drink recipes */
             CraftingRegistry.addShapelessRecipe(new ItemStack(TOXIC_SLUDGE.asItem(), 1), new ItemStack(POISON.asItem(), 1, -1), new ItemStack(Item.DYE, 1, 0), new ItemStack(Item.DYE, 1, 15), Item.GUNPOWDER);
+            CraftingRegistry.addShapelessRecipe(new ItemStack(ANGELIC_ELIXIR.asItem(), 1), new ItemStack(ELIXIR.asItem(), 1, -1), Item.FEATHER, Item.SNOWBALL, Item.GOLD_INGOT);
             CraftingRegistry.addShapelessRecipe(new ItemStack(DANDELION_TEA.asItem(), 1), new ItemStack(CUP_OF_WATER.asItem(), 1, 1), Block.DANDELION);
             CraftingRegistry.addShapelessRecipe(new ItemStack(ROSE_TEA.asItem(), 1), new ItemStack(CUP_OF_WATER.asItem(), 1, 1), Block.ROSE);
             CraftingRegistry.addShapelessRecipe(new ItemStack(FAIRY_TEA.asItem(), 1), new ItemStack(CUP_OF_WATER.asItem(), 1, 1), Item.GLOWSTONE_DUST, Block.DANDELION, Block.ROSE);

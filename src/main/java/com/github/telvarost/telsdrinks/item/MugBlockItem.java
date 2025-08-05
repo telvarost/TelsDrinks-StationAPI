@@ -44,6 +44,11 @@ public class MugBlockItem extends TemplateBlockItem implements CustomTooltipProv
             }
         } else if (stack.itemId == BlockListener.ELIXIR.asItem().id) {
             user.heal(14);
+        } else if (stack.itemId == BlockListener.ANGELIC_ELIXIR.asItem().id) {
+            user.heal(15);
+            user.fireTicks = 0;
+            user.air = 300;
+            user.fallDistance = 0.0F;
         } else if (stack.itemId == BlockListener.BITTER_WATER.asItem().id) {
             if (stack.getDamage() == 1) {
                 user.heal(1);

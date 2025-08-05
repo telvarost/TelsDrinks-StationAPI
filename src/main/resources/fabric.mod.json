@@ -42,6 +42,7 @@
   "mixins": [
     "telsdrinks.mixins.json"
   ],
+  "accessWidener": "telsdrinks.accesswidener",
 
   "depends": {
     "minecraft": "1.0.0-beta.7.3",

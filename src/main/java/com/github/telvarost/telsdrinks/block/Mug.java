@@ -182,6 +182,12 @@ public class Mug extends TemplateBlock {
         } else if (blockId == BlockListener.ELIXIR.id) {
             drink(world, x, y, z, player, 14);
             return true;
+        } else if (blockId == BlockListener.ANGELIC_ELIXIR.id) {
+            drink(world, x, y, z, player, 15);
+            player.fireTicks = 0;
+            player.air = 300;
+            player.fallDistance = 0.0F;
+            return true;
         } else if (blockId == BlockListener.BITTER_WATER.id) {
             if (heatValue == 1) {
                 drink(world, x, y, z, player, 1);

@@ -31,6 +31,7 @@ public class BlockListener {
     public static Block BITTER_WATER;
     public static Block APPLE_CIDER;
     public static Block ELIXIR;
+    public static Block ANGELIC_ELIXIR;
     public static Block HOT_CHOCOLATE;
     public static Block LATTE;
     public static Block MOCHA;
@@ -59,6 +60,7 @@ public class BlockListener {
         EMPTY_MUG = new EmptyMug(Identifier.of(TelsDrinks.TELS_DRINKS, "empty_mug"), Material.PISTON_BREAKABLE).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(TelsDrinks.TELS_DRINKS, "empty_mug");
         APPLE_CIDER = new Mug(Identifier.of(TelsDrinks.TELS_DRINKS, "apple_cider"), Material.PISTON_BREAKABLE).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(TelsDrinks.TELS_DRINKS, "apple_cider");
         ELIXIR = new Mug(Identifier.of(TelsDrinks.TELS_DRINKS, "elixir"), Material.PISTON_BREAKABLE).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(TelsDrinks.TELS_DRINKS, "elixir");
+        ANGELIC_ELIXIR = new Mug(Identifier.of(TelsDrinks.TELS_DRINKS, "angelic_elixir"), Material.PISTON_BREAKABLE).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(TelsDrinks.TELS_DRINKS, "angelic_elixir");
         BITTER_WATER = new Mug(Identifier.of(TelsDrinks.TELS_DRINKS, "bitter_water"), Material.PISTON_BREAKABLE).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(TelsDrinks.TELS_DRINKS, "bitter_water");
         CUP_OF_MILK = new Mug(Identifier.of(TelsDrinks.TELS_DRINKS, "cup_of_milk"), Material.PISTON_BREAKABLE).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(TelsDrinks.TELS_DRINKS, "cup_of_milk");
         POISON = new Mug(Identifier.of(TelsDrinks.TELS_DRINKS, "poison"), Material.PISTON_BREAKABLE).setSoundGroup(STONE_SOUND_GROUP).setTranslationKey(TelsDrinks.TELS_DRINKS, "poison");
@@ -90,6 +92,7 @@ public class BlockListener {
         ,   EMPTY_MUG
         ,   APPLE_CIDER
         ,   ELIXIR
+        ,   ANGELIC_ELIXIR
         ,   BITTER_WATER
         ,   CUP_OF_MILK
         ,   POISON
