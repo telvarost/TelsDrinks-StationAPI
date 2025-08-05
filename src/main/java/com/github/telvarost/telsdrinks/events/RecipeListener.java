@@ -36,7 +36,8 @@ public class RecipeListener {
             CraftingRegistry.addShapedRecipe(new ItemStack(MILK_KETTLE.asItem(), 1), " X ", "XYX", "XXX", 'X', Item.IRON_INGOT, 'Y', Item.MILK_BUCKET);
 
             /** - Mug crafting recipes */
-            CraftingRegistry.addShapedRecipe(new ItemStack(CLAY_MUG.asItem(), 2), "   ", "XXX", " X ", 'X', Item.CLAY);
+            CraftingRegistry.addShapedRecipe(new ItemStack(CLAY_MUG.asItem(), 1), "X", "X", 'X', Item.CLAY);
+            CraftingRegistry.addShapedRecipe(new ItemStack(CLAY_MUG.asItem(), 2), "XXX", " X ", 'X', Item.CLAY);
         }
 
         if (type == RecipeRegisterEvent.Vanilla.SMELTING.type()) {

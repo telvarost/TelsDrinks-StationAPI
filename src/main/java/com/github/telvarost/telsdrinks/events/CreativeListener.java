@@ -17,6 +17,12 @@ public class CreativeListener {
         tabTelsDrinks = new SimpleTab(TelsDrinks.TELS_DRINKS.id("kettle"), BlockListener.KETTLE.asItem());
         event.register(tabTelsDrinks);
         for (Block block : BlockListener.blocks){
+            if (BlockListener.EMPTY_MUG.id == block.id) {
+                for (Item item : ItemListener.items){
+                    tabTelsDrinks.addItem(new ItemStack(item, 1));
+                }
+            }
+
             tabTelsDrinks.addItem(new ItemStack(block.asItem(), 1));
 
             if (  BlockListener.CUP_OF_WATER.id == block.id
@@ -26,9 +32,6 @@ public class CreativeListener {
             ) {
                 tabTelsDrinks.addItem(new ItemStack(block.asItem(), 1, 1));
             }
-        }
-        for (Item item : ItemListener.items){
-            tabTelsDrinks.addItem(new ItemStack(item, 1));
         }
     }
 }

@@ -89,6 +89,10 @@ public class BlockListener {
         ,   POISON_KETTLE
         ,   WATER_KETTLE
         ,   LAVA_KETTLE
+        ,   APPLE_CAKE
+        ,   CHOCOLATE_CAKE
+        ,   GOLDEN_CAKE
+        ,   POISON_CAKE
         ,   EMPTY_MUG
         ,   APPLE_CIDER
         ,   ELIXIR
@@ -99,17 +103,13 @@ public class BlockListener {
         ,   TOXIC_SLUDGE
         ,   CUP_OF_WATER
         ,   CUP_OF_LAVA
+        ,   DANDELION_TEA
+        ,   ROSE_TEA
+        ,   FAIRY_TEA
         ,   HOT_CHOCOLATE
         ,   LATTE
         ,   MOCHA
         ,   PUMPKIN_SPICE_LATTE
-        ,   DANDELION_TEA
-        ,   ROSE_TEA
-        ,   FAIRY_TEA
-        ,   APPLE_CAKE
-        ,   CHOCOLATE_CAKE
-        ,   GOLDEN_CAKE
-        ,   POISON_CAKE
         };
     }
 }
